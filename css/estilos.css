@@ -1,0 +1,80 @@
+/* Colores para fuentes */
+
+.c-negro{
+    color: rgba(0,0,0,1) !important;
+}
+
+.c-blanco{
+    color: white;
+}
+
+.c-azul-talavera{
+    color: #428bca;
+}
+
+
+/* Si un elemento del navbar de bootstrap está activo */
+.navbar.bg-blanco{
+    background-color: white !important;
+}
+
+.nav-item{
+    padding: 1.25px 10px;
+}
+
+.navbar-light .navbar-nav .nav-link{
+    color: rgba(0,0,0,1);
+    border-bottom: rgba(66,139,202,0) 2px solid;
+}
+
+.navbar-light .navbar-nav .nav-item:hover{
+    background-color: rgba(0,0,0,0.05)!important;
+    border-radius: 5px;
+}
+.navbar-light .navbar-nav .active{
+    border-bottom: #428bca 2px solid;
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important; 
+}
+
+.navbar-light .navbar-nav .nav-link, .navbar-light .navbar-nav .nav-link:hover{
+    color: rgba(0,0,0,1);
+}
+
+/* Carousel de imagenes */
+
+.carousel{
+    margin-top: 0;
+}
+
+.carousel img{
+    vertical-align: middle;
+    max-height: 350px;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    max-width: none;
+    object-fit: cover;
+    object-position: 30% 70%;
+    animation-name: posicion-img;
+    animation-duration:15s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes posicion-img{
+    from {object-position: 130% 70%}
+    to {object-position: 130% 0%}
+}
+
+.carousel-item:before{
+    content:"";
+    position: absolute;
+    z-index: 100;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    height: 350px;
+    width:100%;
+    background-color: rgba(66,139,202,0.65)!important;
+}
