@@ -1,53 +1,69 @@
 /* Colores para fuentes */
 
-.c-negro{
-    color: rgba(0,0,0,1) !important;
+.c-negro {
+    color: rgba(0, 0, 0, 1) !important;
 }
 
-.c-blanco{
+.c-blanco {
     color: white;
 }
 
-.c-azul-talavera{
+.c-azul-talavera {
     color: #428bca;
+}
+
+.c-amarillo {
+    color: gold;
+}
+
+/* Fuente roboto */
+.roboto {
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Fuente montserrat */
+.montserrat {
+    font-family: 'Montserrat', sans-serif;
 }
 
 
 /* Si un elemento del navbar de bootstrap está activo */
-.navbar.bg-blanco{
+.navbar.bg-blanco {
     background-color: white !important;
 }
 
-.nav-item{
+.nav-item {
     padding: 1.25px 10px;
 }
 
-.navbar-light .navbar-nav .nav-link{
-    color: rgba(0,0,0,1);
-    border-bottom: rgba(66,139,202,0) 2px solid;
+.navbar-light .navbar-nav .nav-link {
+    color: rgba(0, 0, 0, 1);
+    border-bottom: rgba(66, 139, 202, 0) 2px solid;
 }
 
-.navbar-light .navbar-nav .nav-item:hover{
-    background-color: rgba(0,0,0,0.05)!important;
+.navbar-light .navbar-nav .nav-item:hover {
+    background-color: rgba(0, 0, 0, 0.05) !important;
     border-radius: 5px;
 }
-.navbar-light .navbar-nav .active{
+
+.navbar-light .navbar-nav .active {
     border-bottom: #428bca 2px solid;
     border-bottom-left-radius: 0 !important;
-    border-bottom-right-radius: 0 !important; 
+    border-bottom-right-radius: 0 !important;
 }
 
-.navbar-light .navbar-nav .nav-link, .navbar-light .navbar-nav .nav-link:hover{
-    color: rgba(0,0,0,1);
+.navbar-light .navbar-nav .nav-link,
+.navbar-light .navbar-nav .nav-link:hover {
+    color: rgba(0, 0, 0, 1);
 }
 
 /* Carousel de imagenes */
 
-.carousel{
+.carousel {
     margin-top: 0;
 }
 
-.carousel img{
+.carousel img {
     vertical-align: middle;
     max-height: 350px;
     top: 0;
@@ -57,24 +73,70 @@
     object-fit: cover;
     object-position: 30% 70%;
     animation-name: posicion-img;
-    animation-duration:15s;
+    animation-duration: 15s;
     animation-iteration-count: infinite;
 }
 
-@keyframes posicion-img{
-    from {object-position: 130% 70%}
-    to {object-position: 130% 0%}
+@keyframes posicion-img {
+    from {
+        object-position: 130% 70%
+    }
+
+    to {
+        object-position: 130% 0%
+    }
 }
 
-.carousel-item:before{
-    content:"";
+.carousel-item:before {
+    content: "";
     position: absolute;
     z-index: 100;
-    top:0;
-    bottom:0;
-    left:0;
-    right:0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
     height: 350px;
-    width:100%;
-    background-color: rgba(66,139,202,0.65)!important;
+    width: 100%;
+    background-color: rgba(66, 139, 202, 0.65) !important;
+}
+
+.contenido-carousel {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 62.5px;
+    width: 100vw;
+    height: 350px;
+    background-color: rgba(0, 0, 0, 0.00);
+    color: white;
+    z-index: 150;
+    vertical-align: middle;
+}
+
+.contenido-carousel-child {
+    position: relative;
+    display: table-cell;
+    vertical-align: center;
+    text-align: center;
+    top: 0;
+    bottom: 0;
+}
+
+.contenido-carousel-child>.titulo {
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+.contenido-carousel-child .titulo+.subtitulo {
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.75);
+}
+
+.btn-visitar-talavera {
+    margin-top: 25px;
+    background-color: rgba(0, 0, 0, 0.25);
+}
+
+.btn-visitar-talavera:hover {
+    background-image: url('../img/418-732.jpg');
+    color: white;
 }
