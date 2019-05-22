@@ -319,7 +319,7 @@ div.chatbot-container:hover > span.chatbot{
 
 div.chatbot{
     height: 400px;
-    width: 300px;
+    width: 325px;
     position: fixed;
     bottom: 0;
     right: 0;
@@ -331,11 +331,20 @@ div.chatbot{
     border-radius: 20px;
     animation: mostrar-chatbot-d .5s ease-in-out;
 }
+div.chatbot-mensajes-container{
+    overflow: hidden;
+}
+
 div.chatbot-mensajes{
     background-color:white;
     height:280px;
-    position: relative;
+    overflow: auto;
     bottom: 0;
+    padding: 15px;
+}
+
+::-webkit-scrollbar{
+    background: transparent;
 }
 
 div.chatbot-escribir{
@@ -347,15 +356,57 @@ div.chatbot-escribir{
     border-bottom-right-radius: 15px;
 }
 
+.mensaje{
+    margin-top:10px;
+}
+.enviadoPorBot{
+    background-color:#e6e6e6;
+
+}
+
+.enviadoPorTi{
+    background-color:#007bff;
+    color:white;
+}
+
+
+
+.mensaje-burbuja{
+    height:25px;
+    width: auto;
+    height: auto;
+    border-radius: 10px;
+    padding: 5px 10px;
+    margin-left: 10px;
+    display:block;
+}
+
+.chatbot-img-perfil-msg{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-top:5px;
+}
+
 #chatbot-input{
     width: 90%;
     background-color: #e6e6e6;
-    border-radius: 25px;
+    border-radius: 20px;
     height:30px;
     border:0;
     color: black;
     padding-left:20px;
     margin:10px 5%;
+}
+
+.enviar-msg{
+    position: absolute;
+    top: 365px;
+    right: 30px;
+    color: gray;
+    font-size: 24px;
+    background-color: transparent;
+    cursor: pointer;
 }
 
 div.chatbot-header{

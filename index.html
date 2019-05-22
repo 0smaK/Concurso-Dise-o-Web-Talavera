@@ -32,6 +32,7 @@
 
     <!-- Scripts propios -->
     <script src="./js/index.js"></script>
+    <script src="./js/chatbot.js"></script>
 
     <!-- link de estilos css propios -->
     <link rel="stylesheet" href="./css/estilos.css">
@@ -156,11 +157,20 @@
                 </div>
             </div>
         </div>
-        <div class="chatbot-mensajes">
-            
+        <div class="chatbot-mensajes-container">
+            <div id="mensajes-chat" class="chatbot-mensajes clearfix">
+                <div class="d-flex justify-content-start mensaje">
+                    <img src="./img/chatbot_img.png" class="chatbot-img-perfil-msg">
+                    <div class="mensaje-burbuja enviadoPorBot">
+                        ¡Hola! Soy TalaBOT tu asistente virtual para que conozcas Talavera de la Reina a la perfección
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="chatbot-escribir">
-            <input id="chatbot-input" type="text" placeholder="Escribe un mensaje">
+            <input onkeyup="cambiarBotonChatbot()" onkeydown="if (event.keyCode == 13) getMensaje() " id="chatbot-input"
+                type="text" placeholder="Escribe un mensaje..." onenter>
+            <i class="material-icons enviar-msg" onclick="getMensaje()">send</i>
         </div>
     </div>
     <div class="chatbot-container">
