@@ -18,7 +18,7 @@
 
 /* Fuente roboto */
 .roboto {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', sans-serif!important;
 }
 
 /* Fuente montserrat */
@@ -97,7 +97,28 @@
     right: 0;
     height: 350px;
     width: 100%;
-    background-color: rgba(66, 139, 202, 0.65) !important;
+    background: linear-gradient(222deg, #428bcab7, #0f64aab6);
+    background-size: 400% 400%;
+    -webkit-animation: blueTalaveraGradient 30s ease infinite;
+    -moz-animation: blueTalaveraGradient 30s ease infinite;
+    animation: blueTalaveraGradient 30s ease infinite;
+}
+
+
+@-webkit-keyframes blueTalaveraGradient {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes blueTalaveraGradient {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes blueTalaveraGradient {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
 }
 
 .contenido-carousel {
@@ -139,4 +160,109 @@
 .btn-visitar-talavera:hover {
     background-image: url('../img/418-732.jpg');
     color: white;
+}
+
+/* Div para planear viaje */
+
+.container.planea-viaje{
+    margin-top:35px;
+}
+
+
+.card-planea-viaje{
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    width: 100%; 
+    border-radius: 2px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    height:300px;
+    display: table;
+    background: white;
+    transition: 0.2s color ease-in-out;
+}
+
+.card-planea-viaje:hover{
+    color:white;
+    animation: cambiarBG .5s ease-in-out;
+    -webkit-animation: blueTalaveraGradient 15s ease infinite;
+    -moz-animation: blueTalaveraGradient 15s ease infinite;
+    animation: blueTalaveraGradient 15s ease infinite;
+}
+
+.hotel-bg:hover{
+    background-image: url("../img/hotel-ebora.jpg");
+}
+
+.restaurante-bg:hover{
+    background-image: url("../img/restaurante-el-coto.jpg")
+}
+
+.cine-bg:hover{
+    background-image: url("../img/alfares.jpg")
+}
+
+@keyframes cambiarBG{
+    0%{
+        background: white;
+    }
+    100%{
+        background: linear-gradient(222deg, #428bca5d, #0f64aa59, #428bca62);
+    }
+}
+
+@keyframes saltar{
+    0%{
+        transform: translateY(0);
+    }
+    10%{
+        transform: translateY(-10px);
+    }
+    20%{
+        transform: translateY(-20px);
+    }
+    30%{
+        transform: translateY(-30px);
+    }
+    40%{
+        transform: translateY(-40px);
+    }
+    50%{
+        transform: translateY(-30px);
+    }
+    60%{
+        transform: translateY(-20px);
+    }
+    70%{
+        transform: translateY(-10px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+
+.card-planea-viaje:hover > div > .icon-planes{
+    transform-origin: 50% 50%;
+    animation: saltar 0.75s linear;
+}
+
+.card-planea-viaje > div {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.card-planea-viaje:hover > div {
+    background: linear-gradient(222deg, #428bcacb, #0f64aacb, #428bcacb);
+    -webkit-animation: blueTalaveraGradient 30s ease infinite;
+    -moz-animation: blueTalaveraGradient 30s ease infinite;
+    animation: blueTalaveraGradient 30s ease infinite;
+}
+
+.card-planea-viaje > div > h4 {
+    transform: translateY(25px);
+    opacity: 1;
+}
+
+.icon-planes{
+    font-size: 4.20em;
 }
