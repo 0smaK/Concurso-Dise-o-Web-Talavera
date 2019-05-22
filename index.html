@@ -30,6 +30,9 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
         </script>
 
+    <!-- Scripts propios -->
+    <script src="./js/index.js"></script>
+
     <!-- link de estilos css propios -->
     <link rel="stylesheet" href="./css/estilos.css">
     <title>Talavera de la Reina</title>
@@ -140,9 +143,33 @@
                 </div>
             </div>
         </div>
-
-
     </div>
+    <div id="chatbot" class="chatbot hide-chatbot">
+        <div class="chatbot-header clearfix" style="display: table;">
+            <div style="display:table-cell; vertical-align:middle;">
+                <img class="chatbot-img-perfil" src="./img/chatbot_img.png">
+                <div class="chatbot-header-text">
+                    <div class="nombre-chatbot">TalaBOT</div>
+                    <div class="status-chatbot">
+                        <div class="online"></div> En linea
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="chatbot-mensajes">
+            
+        </div>
+        <div class="chatbot-escribir">
+            
+        </div>
+    </div>
+    <div class="chatbot-container">
+        <span class="badge badge-primary chatbot">Haz tu viaje con nuestro chatbot</span>
+        <button type="button" class="btn btn-primary chatbot" onclick="mostrarChatbot()">
+            <i id="icono-chatbot" class="material-icons">
+                chat_bubble_outline
+            </i>
+        </button>
     </div>
 </body>
 
