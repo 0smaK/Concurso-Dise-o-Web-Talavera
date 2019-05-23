@@ -10,15 +10,21 @@ function cambiarBotonChatbot() {
 
 function getMensaje() {
     let msg = $("#chatbot-input").val()
-    $('.chatbot-mensajes').append('<div class="d-flex justify-content-end mensaje"><div class="mensaje"><div class= "mensaje-burbuja enviadoPorTi">' + msg + '</div ></div></div>')
-    analizarMensaje(msg)
-    $("#chatbot-input").val('')
-    var chat = document.getElementById("mensajes-chat");
-    chat.scrollTop = chat.scrollHeight;
+    if (msg !== "") {
+        $('.chatbot-mensajes').append('<div class="d-flex justify-content-end mensaje"><div class="mensaje"><div class= "mensaje-burbuja enviadoPorTi">' + msg + '</div ></div></div>')
+        analizarMensaje(msg)
+        $("#chatbot-input").val('')
+        var chat = document.getElementById("mensajes-chat");
+        chat.scrollTop = chat.scrollHeight;
+    }
 }
 
 let saludos = [
     'hola', 'hi', 'hello', 'buenas tardes', 'buenos dias', 'buenas noches'
+]
+
+let despedidas = [
+    'adios', 'chao', 'bye', 'hasta la proxima', 'hasta otra'
 ]
 
 let frasesSaludo = [
@@ -28,12 +34,26 @@ let frasesSaludo = [
     'Hola! Preguntame que puedo hacer'
 ]
 
+let frasesDespedida = [
+    '¡Adios!',
+    'Adios, espero que vuelvas!',
+    '¡Hasta luego!',
+    '¡Hasta otra!'
+]
+
+
 function analizarMensaje(msg) {
     let encontrado = false
     for (let saludo in saludos) {
         if (msg.includes(saludos[saludo]) && !encontrado) {
             encontrado = true
             decidirFrase(frasesSaludo)
+        }
+    }
+    for(let despedida in despedidas){
+        if (msg.includes(despedidas[despedida]) && !encontrado) {
+            encontrado = true
+            decidirFrase(frasesDespedida)
         }
     }
 }

@@ -358,6 +358,7 @@ div.chatbot-escribir{
 
 .mensaje{
     margin-top:10px;
+    margin-bottom: 10px;
 }
 .enviadoPorBot{
     background-color:#e6e6e6;
@@ -369,7 +370,14 @@ div.chatbot-escribir{
     color:white;
 }
 
+#mensajes-chat::-webkit-scrollbar {
+    display: none;
+}
 
+#mensajes-chat{
+   -ms-overflow-style: none;
+   scrollbar-width: none;
+}
 
 .mensaje-burbuja{
     height:25px;
@@ -397,6 +405,7 @@ div.chatbot-escribir{
     color: black;
     padding-left:20px;
     margin:10px 5%;
+    padding-right:45px;
 }
 
 .enviar-msg{
