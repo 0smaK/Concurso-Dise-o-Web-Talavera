@@ -474,11 +474,44 @@ img.chatbot-img-perfil{
     }
 }
 
+@keyframes ocultar-chatbot-d{
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(400px);
+    }
+
+}
+
 @keyframes mostrar-chatbot-d{
     0% {
         transform: translateX(400px);
     }
     100% {
-        transform: translateY(0);
+        transform: translateX(0);
     }
+}
+
+.badge-chatbotBoton{
+    cursor: pointer;
+    margin-top:5px;
+}
+
+.badge-chatbotBoton:hover{
+    background-color: #006bdd;
+}
+
+.icon-header{
+    font-size: 1.8em;
+    color: white;
+    margin-top:12px;
+    cursor: pointer;
+    padding-right:10px;
+
+}
+
+#ajustes-chat{
+    float:right;
+    margin-right: 20px;
 }

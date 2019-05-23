@@ -146,14 +146,26 @@
         </div>
     </div>
     <div id="chatbot" class="chatbot hide-chatbot">
+        <audio id="notificacion">
+            <source src="./sounds/notificacion.mp3" type="audio/mpeg">
+            <source src="./sounds/notificacion.ogg" type="audio/ogg">
+        </audio>
         <div class="chatbot-header clearfix" style="display: table;">
             <div style="display:table-cell; vertical-align:middle;">
                 <img class="chatbot-img-perfil" src="./img/chatbot_img.png">
                 <div class="chatbot-header-text">
                     <div class="nombre-chatbot">TalaBOT</div>
                     <div class="status-chatbot">
-                        <div class="online"></div> En linea
+                        <div class="online"></div><span id="estado">En linea</span>
                     </div>
+                </div>
+                <div id="ajustes-chat">
+                    <i id="volumen" class="material-icons icon-header" onclick="silenciar()">
+                        volume_up
+                    </i>
+                    <i class="material-icons icon-header" onclick="vaciarChat()">
+                        delete_outline
+                    </i>
                 </div>
             </div>
         </div>

@@ -7,8 +7,14 @@ function mostrarChatbot() {
         $('#icono-chatbot').html("close")
         oculto = false
     } else {
-        ocultarChatbot();
-        oculto = true
+        $('#chatbot').css('animation', 'ocultar-chatbot-d .5s ease-in-out')
+        setTimeout(function () {
+            console.log("a")
+            ocultarChatbot();
+            oculto = true
+            $('#chatbot').css('animation', 'mostrar-chatbot-d .5s ease-in-out')
+        }, 500)
+
     }
 }
 
