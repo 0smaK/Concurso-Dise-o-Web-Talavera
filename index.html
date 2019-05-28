@@ -14,15 +14,15 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <!-- Fuentes de Google -->
-    <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto|Lobster" rel="stylesheet">
 
     <!-- linkeamos el CSS de bootstrap desde su CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <!-- linkeamos el JavaScript de bootstrap y el JQuery para hacerlo funcionar desde sus respectivos CDN -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-        </script>
+    <!-- linkeamos el JavaScript de bootstrap y el JQuery con Jquery xml2json para hacerlo funcionar desde sus respectivos CDN -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-xml2json@0.0.8/src/xml2json.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
         </script>
@@ -33,38 +33,49 @@
     <!-- Scripts propios -->
     <script src="./js/index.js"></script>
     <script src="./js/chatbot.js"></script>
+    <script src="./js/menu-lateral.js"></script>
 
     <!-- link de estilos css propios -->
     <link rel="stylesheet" href="./css/estilos.css">
+    <link rel="stylesheet" href="./css/menu-lateral.css">
     <title>Talavera de la Reina</title>
 </head>
 
 <body>
-    <!-- navbar en pc -->
-    <nav class="navbar navbar-expand navbar-light bg-blanco">
-        <a class="navbar-brand" href="#">Talavera de la Reina</a>
-        <div class="collapse navbar-collapse ml-auto">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Inicio</a>
-                </li>
-                <li class="nav-item c-negro">
-                    <a class="nav-link" href="#">¿Qué hacer?</a>
-                </li>
-                <li class="nav-item c-negro">
-                    <a class="nav-link" href="#">Alojamiento</a>
-                </li>
-                <li class="nav-item c-negro">
-                    <a class="nav-link" href="#">Gastronomia</a>
-                </li>
-                <li class="nav-item c-negro">
-                    <a class="nav-link" href="#">Ocio</a>
-                </li>
-                <li class="nav-item c-negro">
-                    <a class="nav-link" href="#">Galeria</a>
-                </li>
-            </ul>
+    <div class="menu-lateral hide-menu">
+        <i id="cerrar-menu" class="material-icons" onclick="mostrarMenuLateral()">close</i>
+        <div class="submenu float-left">
+            <div class="submenu-item">Qué ver</div>
+            <div class="submenu-item">Alojamiento</div>
+            <div class="submenu-item">Restaurantes</div>
+            <div class="submenu-item">Bares y ocio</div>
+            <div class="submenu-item">Galeria</div>
         </div>
+        <div class="pronostico-tiempo float-right">
+            <h1>El tiempo</h1>
+            <h3>en Talavera de la Reina</h3>
+            <div class="pronostico-tiempo-in">
+                <i id="icono-tiempo" class="fas fa-cloud"></i>
+                <span class="estadoCielo">Nublado</span>
+                <hr class="separador">
+                <span class="minmax">MIN&nbsp;&nbsp; MAX</span>
+                <span class="temperaturas">18ºC&nbsp;&nbsp; 31ºC</span>
+                <div class="btn-group dias" role="group">
+                    <button id="dia-0" onclick="cargarJSONTiempo(0)" type="button"
+                        class="btn btn-light active dias-btn">Hoy</button>
+                    <button id="dia-1" onclick="cargarJSONTiempo(1)" type="button"
+                        class="btn btn-light dias-btn">Mañana</button>
+                    <button id="dia-2" onclick="cargarJSONTiempo(2)" type="button" class="btn btn-light dias-btn">Pasado
+                        mañana</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- navbar en pc -->
+    <nav class="navbar navbar-expand navbar-light bg-blanco d-flex justify-content-between">
+        <i class="material-icons menu-navbar" onclick="mostrarMenuLateral()">menu</i>
+        <a class="navbar-brand" href="#">Talavera de la Reina</a>
+        <div></div>
     </nav>
 
     <div class="contenido-carousel montserrat">

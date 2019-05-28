@@ -1,0 +1,158 @@
+.menu-lateral{
+    height:100%;
+    width: 95%;
+    position: fixed;
+    top:0;
+    left:0;
+    background: linear-gradient(222deg, #0c6ec4f3, #034174f5);
+    background-size: 350% 400%;
+    -webkit-animation: blueTalaveraGradient 10s ease infinite;
+    -moz-animation: blueTalaveraGradient 10s ease infinite;
+    animation: blueTalaveraGradient 10s ease infinite;
+    z-index: 2000;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+.hide-menu{
+    display:none;
+}
+
+.menu-navbar{
+    font-size:28px;
+    cursor: pointer;
+}
+
+
+@keyframes ocultar-menu-i{
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+
+}
+
+@keyframes mostrar-menu-i{
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+#cerrar-menu{
+    z-index: 1000;
+    cursor: pointer;
+    color: white;
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    font-size: 36px;
+}
+
+#cerrar-menu:hover{
+    height: 10px;
+}
+
+.pronostico-tiempo{
+    position: relative;
+    width:60%;
+    height:100%;
+    color:white;
+    font-size:24px;
+    padding-left:5%;
+    padding-top:10%;
+    font-family: 'Montserrat', sans-serif!important;
+    text-align:center;
+}
+
+.pronostico-tiempo-in{
+    margin-top:35px;
+}
+
+#icono-tiempo{
+    font-size: 64px;
+    display: block;
+}
+
+.estadoCielo{
+    font-size: 18px;
+    margin-top:10px;
+    display: block;
+}
+
+.minmax{
+    margin-top:10px;
+    font-size:14px;
+    display: block;
+}
+
+.dias{
+    margin-top:50px;
+}
+
+hr.separador{
+    border: 0;
+    border-top: 1px dashed white;
+    width: 55%;
+}
+
+.temperaturas{
+    margin-top:10px;
+    font-size: 24px;
+    display: block;
+}
+
+.submenu{
+    color:white;
+    position: relative;
+    padding-left:10%;
+    font-size:24px;
+    vertical-align: middle;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+    width: 40%;
+}
+
+.submenu-item{
+    margin-top:20px;
+    font-size:28px;
+    cursor: pointer;
+    width: 90%;
+    padding:7.5px 2px;
+    font-family: 'Lobster', cursive;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 15px;
+    background: linear-gradient(to right, white 50%, #ffffff00 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    transition: all .5s ease-in-out;
+
+}
+
+.submenu-item:hover{
+    background-color:white;
+    color:black;
+    background-position: left bottom;
+}
+
+@-webkit-keyframes blueTalaveraGradient {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes blueTalaveraGradient {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes blueTalaveraGradient {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
