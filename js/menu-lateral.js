@@ -3,15 +3,21 @@ let menuOculto = true;
 function mostrarMenuLateral() {
     if (menuOculto) {
         $('.menu-lateral').removeClass('hide-menu')
-        $('.menu-lateral').css('animation', 'mostrar-menu-i 1s ease-in-out')
+        $('.menu-lateral-out').removeClass('hide-menu')
+        $('.menu-lateral').css('animation', 'mostrar-menu-i 0.5s ease-in-out')
+        setTimeout(function(){
+            $('body').css('overflow','hidden')
+        },500)
         menuOculto = false
     } else {
-        $('.menu-lateral').css('animation', 'ocultar-menu-i 1s ease-in-out')
+        $('.menu-lateral').css('animation', 'ocultar-menu-i 0.5s ease-in-out')
         setTimeout(function () {
             $('.menu-lateral').addClass('hide-menu')
+            $('.menu-lateral-out').addClass('hide-menu')
+            $('body').css('overflow','auto')
             menuOculto = true
-            $('.menu-lateral').css('animation', 'mostrar-menu-i 1s ease-in-out')
-        }, 1000)
+            $('.menu-lateral').css('animation', 'mostrar-menu-i 0.5s ease-in-out')
+        }, 500)
 
     }
 }
