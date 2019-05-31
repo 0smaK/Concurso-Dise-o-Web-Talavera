@@ -38,6 +38,14 @@ a.no-link{
     background-color: white !important;
 }
 
+img.logo{
+    height: 95%;
+}
+
+nav.navbar{
+    height: 64px;
+}
+
 .nav-item {
     padding: 1.25px 10px;
 }
@@ -71,7 +79,7 @@ a.no-link{
 
 .carousel img {
     vertical-align: middle;
-    max-height: 350px;
+    max-height: 450px;
     top: 0;
     left: 0;
     min-width: 100%;
@@ -83,16 +91,32 @@ a.no-link{
     animation-iteration-count: infinite;
 }
 
+
+.carousel.c-alt img{
+    animation-name: posicion-img-alt!important;
+    animation-duration: 7.5s;
+}
+
 @keyframes posicion-img {
+    
     from {
         object-position: 130% 70%
     }
-
     to {
         object-position: 130% 0%
     }
 }
 
+@keyframes posicion-img-alt{
+    from {
+        object-position: 130% 50%
+    }
+    
+    to {
+        object-position: 130% 70%
+    }
+
+}
 .carousel-item:before {
     content: "";
     position: absolute;
@@ -101,8 +125,13 @@ a.no-link{
     bottom: 0;
     left: 0;
     right: 0;
-    height: 350px;
+    height: 450px;
     width: 100%;
+    background-size: 400% 400%;
+
+}
+
+.carousel-blue:before {
     background: linear-gradient(222deg, #428bcab7, #0f64aab6);
     background-size: 400% 400%;
     -webkit-animation: blueTalaveraGradient 30s ease infinite;
@@ -134,11 +163,12 @@ a.no-link{
     align-items: center;
     top: 62.5px;
     width: 100%;
-    height: 350px;
+    height: 450px;
     background-color: rgba(0, 0, 0, 0.00);
     color: white;
     z-index: 150;
     vertical-align: middle;
+
 }
 
 .contenido-carousel-child {
@@ -160,6 +190,8 @@ a.no-link{
 
 .btn-visitar-talavera {
     margin-top: 25px;
+    padding:10px 30px;
+    border-radius: 25px;
     background-color: rgba(0, 0, 0, 0.25);
 }
 
@@ -282,6 +314,7 @@ div.chatbot-container{
     bottom: 0;
     right: 0;
     margin: 1em;
+    z-index: 2002;
 }
 
 .hide-chatbot{
@@ -297,6 +330,7 @@ button.chatbot{
     line-height: 1.42;
     border-radius: 50%;
     transition: 0.70s;
+    z-index: 501;
 }
 
 button.chatbot:hover{

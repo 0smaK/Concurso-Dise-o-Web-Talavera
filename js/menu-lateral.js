@@ -1,5 +1,7 @@
 let menuOculto = true;
 
+cargarJSONTiempo(0)
+
 function mostrarMenuLateral() {
     if (menuOculto) {
         $('.menu-lateral').removeClass('hide-menu')
@@ -53,6 +55,10 @@ function modificarTiempoDOM(estadoCielo, min, max, dia) {
     $('.dias-btn').removeClass('active')
     $('#dia-' + dia).addClass("active")
     $('#icono-tiempo').removeClass()
+    if(dia == 0){
+        $('.tiempo .min').html(min+" ºC")
+        $('.tiempo .max').html(max+" ºC")
+    }
     switch (estadoCielo) {
         case 'Despejado':
             $('#icono-tiempo').addClass('fas fa-sun')
