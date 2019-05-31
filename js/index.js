@@ -1,3 +1,5 @@
+'use strict'
+
 let oculto = true;
 
 function mostrarChatbot() {
@@ -8,7 +10,7 @@ function mostrarChatbot() {
         oculto = false
     } else {
         $('#chatbot').css('animation', 'ocultar-chatbot-d .5s ease-in-out')
-        setTimeout(function () {
+        setTimeout(() => {
             ocultarChatbot();
             oculto = true
             $('#chatbot').css('animation', 'mostrar-chatbot-d .5s ease-in-out')

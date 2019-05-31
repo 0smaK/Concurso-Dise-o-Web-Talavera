@@ -1,5 +1,6 @@
+'use strict'
 
-setTimeout(function () {
+setTimeout(() => {
     limpiarBusqueda()
     mostrarBotonLimpiar()
 }, 100)
@@ -19,12 +20,12 @@ function limpiarBusqueda() {
     mostrarBotonLimpiar()
 }
 
-let timer, delay = 300;
+let timer, delay = 200;
 
 function buscar(tipo) {
     let busqueda = []
     clearTimeout(timer);
-    timer = setTimeout(function () {
+    timer = setTimeout(() => {
         let tipo = 'alojamientos'
         let query = $('#buscador').val().toLowerCase()
         for (let lugar of lugares[tipo]) {

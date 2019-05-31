@@ -1,3 +1,5 @@
+'use strict'
+
 let menuOculto = true;
 
 cargarJSONTiempo(0)
@@ -7,13 +9,13 @@ function mostrarMenuLateral() {
         $('.menu-lateral').removeClass('hide-menu')
         $('.menu-lateral-out').removeClass('hide-menu')
         $('.menu-lateral').css('animation', 'mostrar-menu-i 0.5s ease-in-out')
-        setTimeout(function(){
+        setTimeout(() => {
             $('body').css('overflow','hidden')
         },500)
         menuOculto = false
     } else {
         $('.menu-lateral').css('animation', 'ocultar-menu-i 0.5s ease-in-out')
-        setTimeout(function () {
+        setTimeout(() => {
             $('.menu-lateral').addClass('hide-menu')
             $('.menu-lateral-out').addClass('hide-menu')
             $('body').css('overflow','auto')
@@ -27,7 +29,7 @@ function mostrarMenuLateral() {
 function cargarJSONTiempo(dia) {
     let url = 'https://opendata.aemet.es/opendata/api/prediccion/especifica/municipio/diaria/45165/?api_key=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJvc2Nhcm1jOTlAZ21haWwuY29tIiwianRpIjoiYjMwYjJlNDItZGZiYi00Y2M1LWFlNDMtMTQ3Y2Y1ZWZhOTVmIiwiaXNzIjoiQUVNRVQiLCJpYXQiOjE1NTkwNjc0MzQsInVzZXJJZCI6ImIzMGIyZTQyLWRmYmItNGNjNS1hZTQzLTE0N2NmNWVmYTk1ZiIsInJvbGUiOiIifQ._0ccALKpYYsiIGTqCibZY7fnLk5wV1D3hSL_8bMuRFg'
     $.getJSON(url)
-        .done(function (data) {
+        .done((data) => {
             returnDatos(data.datos, dia)
         })
 }
@@ -35,7 +37,7 @@ function cargarJSONTiempo(dia) {
 
 function returnDatos(url, dia) {
     $.getJSON(url)
-        .done(function (data) {
+        .done((data) => {
             mostrarTemperatura(data[0]['prediccion']['dia'], dia)
         })
 }
