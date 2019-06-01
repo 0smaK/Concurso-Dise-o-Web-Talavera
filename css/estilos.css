@@ -44,7 +44,7 @@ img.logo{
 
 nav.navbar{
     height: 64px;
-    z-index: 5000;
+    z-index: 50000;
 }
 
 .nav-item {

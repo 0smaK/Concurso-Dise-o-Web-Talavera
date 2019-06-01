@@ -38,17 +38,17 @@ function buscar(tipo) {
 
             }
         }
-        if (query != "") mostrarBusqueda(busqueda)
+        if (query != "") mostrarBusqueda(busqueda,tipo)
         else agitar(0)
     }, delay);
 }
 
 let busquedaAux = []
-function mostrarBusqueda(busqueda) {
+function mostrarBusqueda(busqueda,tipo) {
     if ((JSON.stringify(busquedaAux) != JSON.stringify(busqueda)) || ((JSON.stringify(busqueda) != "") && ($('.busqueda').html() == ""))) {
         $('.busqueda').html('')
         for (let lugar of busqueda) {
-            $('.busqueda').append('<div class="card-busqueda"><img src="' + lugar['imagenes'][0] + '" class="float-left" alt=""><div class="float-right"><h4 class="montserrat">' + lugar['nombre'] + '</h4></div></div>')
+            $('.busqueda').append(`<div class="card-busqueda" onclick="abrirPlan(${"'" + tipo + "'"},${"'" + lugar['nombre'] + "'"})"><img src="${lugar['imagenes'][0]}" class="float-left" alt=""><div class="float-right"><h4 class="montserrat">${lugar['nombre']}</h4></div></div>`)
         }
         agitar($('.busqueda').html() == "" ? 1 : 0)
     }
@@ -70,3 +70,26 @@ function agitar(flag) {
         $('input.buscador').css('color', 'black')
     }
 }
+
+function scrollBusqueda(derecha) {
+    if (derecha) {
+        $('.busqueda').animate({
+            scrollLeft: "+=30px"
+        }, 5);
+    } else {
+        $('.busqueda').animate({
+            scrollLeft: "-=30px"
+        }, .5);
+    }
+}
+
+jQuery(function ($) {
+    if ($('.busqueda').html() != "") {
+        let ratonX
+        $('.busqueda').mousemove((event) => {
+            ratonX = event.pageX;
+            if (ratonX > $('.busqueda').width() * (75 / 100)) scrollBusqueda(true)
+            else if (ratonX < $('.busqueda').width() * (25 / 100)) scrollBusqueda(false)
+        })
+    }
+})

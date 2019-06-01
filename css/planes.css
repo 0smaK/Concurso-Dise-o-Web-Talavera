@@ -1,3 +1,11 @@
+.oswald{
+    font-family: 'Oswald', sans-serif; 
+}
+
+.w-500{
+    font-weight: 500;
+}
+
 .alojamientos-card{
     position: absolute;
     top:375px;
@@ -5,7 +13,7 @@
     background-color: white;
     border-radius: 25px;
     width: 90%;
-    height: 100%;
+    height: 150px;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
     left:5%;
@@ -50,10 +58,10 @@ input.buscador{
 .busqueda{
     position: absolute;
     top:150px;
-    width: 85%;
+    width: 80%;
     height: 200px;
     left: 10%;
-    z-index: 2000;
+    z-index: 2011;
     white-space:nowrap;
     overflow-x: hidden;
     overflow-y: hidden;
@@ -61,15 +69,19 @@ input.buscador{
 
 .card-busqueda{
     cursor: pointer;
-    margin-right: 40px;
+    margin-right: 25px;
     margin-left: 10px;
     width:325px;
     height: 125px;
     border-radius: 10px;
     background-color: white;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.25);
+    box-shadow: 0 14px 28px rgba(0,0,0,0.09), 0 10px 10px rgba(0,0,0,0.19);
     display: inline-block;
     animation: aparecer-card .25s;
+}
+
+.card-busqueda:hover{
+    box-shadow: 0 14px 28px rgba(0,0,0,0.19), 0 10px 10px rgba(0,0,0,0.25);
 }
 
 @keyframes aparecer-card{
@@ -123,22 +135,292 @@ input.buscador{
     100% {transform: translate(0px); }
 }
 
-.favs{
+.favs,.todos,.vistos{
     margin:40px;
     width: 100%;
 }
 
-.favs .no-likes{
+.favs .no-likes,.vistos .no-vistos{
     text-align: center;
     color: #757575;
 }
 
-.favs .no-likes i{
+.favs .no-likes i,.vistos .no-vistos i{
     font-size: 128px;
     margin: 50px;
     display: block;
 }
 
-body{
-    overflow: auto;
+div.filtros{
+    transform: translateY(-10px);
+    margin:5px;
+    position: relative;
+    display: inline-block;
+    z-index: 500;
+    background-color:#007bff;
+    padding:12.5px;
+    border-radius: 20px;
+}
+
+span.filtros{
+    border-radius: 20px;
+    padding:7.5px 15px;
+    margin:2.5px;
+    cursor: pointer;
+    z-index: 2002;
+}
+
+span.filtros.t-filtros{
+    color: white;
+    background-color:#007bff;
+    margin-right:10px;
+    cursor: default;
+}
+
+span.filtros.f-filtros{
+    background-color:white;
+    color:#007bff;
+    border:1px solid #007bff;
+}
+
+span.filtros.f-filtros.active{
+    background-color: #0050a7;
+    color: white;
+    border: 1px solid #0050a7;
+}
+
+span.filtros.f-filtros:hover{
+    background-color: #0050a7;
+    color: white;
+    border: 1px solid #0050a7;
+}
+
+.card-plans{
+    cursor: pointer;
+    border-radius:20px;
+    margin-top:15px;
+    margin-bottom: 10px;
+    margin-right:5px;
+    transform: translateX(-25px);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.card-plans:hover{
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.card-plans img{
+    border-top-right-radius:20px;
+    border-top-left-radius:20px;
+}
+
+span.me-gusta{
+    border-radius: 25px;
+    padding:7.5px 15px;
+    margin:10px;
+    cursor: pointer;
+    background-color:white;
+    color:crimson;
+    border:1px solid crimson;
+}
+
+span.me-gusta:hover{
+    background-color: crimson;
+    color: white;
+    border: 1px solid crimson;
+}
+
+div#mostrar-plan{
+    bottom: 0;
+    position: fixed;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    z-index: 10000;
+    animation: mostrarplan 0.5s ease-in-out;
+}
+
+div#mostrar-plan .container-fluid{
+    margin-top: 50px;
+}
+
+@keyframes mostrarplan{
+    from {
+        transform: translateY(100%);
+        left: 47.5%;
+        bottom: 100%;
+        width: 5%;
+        height: 5%;
+        border-top-left-radius: 50%;
+        border-top-right-radius: 50%;
+    }
+    
+    to {
+        transform: translateY(0);
+        width: 100%;
+        height: 100%;
+        left: 0;
+        bottom: 0;
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
+    }
+}
+
+.img-principal{
+    max-width: 85%;
+}
+
+span.btn-salir-plan{
+    cursor:pointer;
+    position: fixed;
+    left: 5%;
+    bottom: 5%;
+    background-color: #007bff;
+    padding: 7.5px 15px;
+    border-radius: 20px;
+    z-index: 10001;
+    color: white;
+}
+
+div.servicios-plan{
+    display: inline-block;
+    margin-top:15px;
+}
+span.servicios-plan{
+    background-color: #007bff;
+    padding: 7.5px 15px;
+    border-radius: 20px;
+    color: white;
+    margin-right: 20px;
+}
+
+span.servicios-plan i{
+    margin-right: 7.5px;
+}
+
+.descripcion-plan{
+    margin-top: 20px;
+    margin-right: 50px;
+}
+
+span.me-gusta-round{
+    border-radius: 50%;
+    background-color:crimson;
+    color:white;
+    padding:10px;
+    position: fixed;
+    right: 5%;
+    z-index: 1010;
+    top: 15%;
+    cursor:pointer;
+}
+
+span.me-gusta-round:hover{
+    animation: mostrar-texto-btn .25s ease-in;
+    border-radius: 25px;
+    padding: 7.5px 15px;
+}
+
+span.me-gusta-round span{
+    display:none;
+    font-size:18px;
+    margin-bottom:10px;
+}
+
+span.me-gusta-round:hover span{
+    display:inline;
+    animation: aparecertxt .25s ease-in;
+}
+
+@keyframes mostrar-texto-btn{
+    from{
+        border-radius: 30%;
+        padding: 10px;
+    }
+    to{
+        border-radius: 25px;
+        padding: 7.5px 15px;
+    }
+}
+
+@keyframes aparecertxt{
+    from{
+        width: 0%;
+        opacity:0;
+    }
+    to{
+        width: 100%;
+        opacity: 1;
+    }
+}
+
+span.me-gusta-round i{
+    font-size:28px;
+    transform:translateY(2.5px);
+}
+
+span.me-gusta-round:hover i{
+    animation: corazon-anim 1s ease-in-out;
+    padding-right:5px;
+}
+
+@keyframes corazon-anim{
+    0%{
+        transform: rotate(40deg);
+    }
+    10%{
+        transform: rotate(-40deg);
+    }
+    20%{
+        transform: rotate(30deg);
+    }
+    30%{
+        transform: rotate(-30deg);
+    }
+    40%{
+        transform: rotate(20deg);
+    }
+    50%{
+        transform: rotate(-20deg);
+    }
+    60%{
+        transform: rotate(10deg);
+    }
+    70%{
+        transform: rotate(-10deg);
+    }
+    80%{
+        transform: rotate(5deg);
+    }
+    90%{
+        transform: rotate(-5deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
+
+.desplazar-i{
+    animation: desplazar-i .5s ease-in;
+}
+
+@keyframes salirPlan{
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(100%);
+    }
+}
+
+@keyframes desplazar-i{
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-300px);
+    }
 }

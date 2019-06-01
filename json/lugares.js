@@ -23,6 +23,36 @@ const lugares = {
                 "./img/alojamientos/besmart-talavera.jpg",
                 "./img/alojamientos/besmart.jpg",
             ]
+        },
+        {
+            "nombre": "Hotel Roma",
+            "descripcion": "El Hotel Roma Aurea, construido en 2001, destaca por su funcionalidad y su ambiente urbano. Dispone de un total de 44 habitaciones completamente equipadas con los mejores servicios para que te sientas como en tu propia casa. Además, dos de las habitaciones con las que cuenta, disponen de un salón privado para ofrecer así una mayor comodidad. El Hotel Roma Aurea pone a tu disposición todo tipo de servicios, como una amplia zona de aparcamiento, servicio de despertador, acceso Wi-Fi gratuito, entre otros. Hotel Roma Aurea dispone de salones para convenciones de empresa que se acomodan completamente a las necesidades del anfitrión y que están equipados para tener un provechoso final. Además, Hotel Roma Aurea también quiere acompañarte en tus banquetes y eventos y pone a tu disposición distintos salones ideales para celebrar bodas, bautizos o comuniones.",
+            "web": "http://www.hotelromaaurea.com",
+            "mail": "info@hotelromaaurea.com",
+            "direccion": "C/Roma, 1, 45600, Talavera de la Reina, Toledo, España",
+            "telefono": "925721675",
+            "imagenes": [
+                "./img/alojamientos/hotel-roma-0.jpg",
+                "./img/alojamientos/hotel-roma-1.jpg",
+                "./img/alojamientos/hotel-roma-2.jpg",
+                "./img/alojamientos/hotel-roma-3.jpg",
+                "./img/alojamientos/hotel-roma-4.jpg"
+            ]
+        },
+        {
+            "nombre": "Hotel Perales",
+            "descripcion": "Hotel Perales cuenta con unas instalaciones acondicionadas para disfrutar del descanso. Disponemos de habitaciones totalmente climatizadas con baño completo, TV, teléfono directo y acceso a internet vía Wi-Fi de forma totalmente gratuita. La capacidad del hotel es de hasta 130 plazas. Ponemos a su disposición un amplio comedor, sala de reuniones, cafetería, restaurante y lo más importante, un grupo de profesionales dedicados a que su estancia sea lo más agradable posible.",
+            "web": "http://www.hotelperales.es/",
+            "mail": "info@hotelperales.es",
+            "direccion": "Avda. de Pío XII, 3, 45600, Talavera de la Reina, Toledo, España",
+            "telefono": "925803900",
+            "imagenes": [
+                "./img/alojamientos/perales.jpg",
+                "./img/alojamientos/perales-1.jpg",
+                "./img/alojamientos/perales-2.jpg",
+                "./img/alojamientos/perales-3.jpg",
+                "./img/alojamientos/perales-4.jpg"
+            ]
         }
     ],
     "restaurantes": [
