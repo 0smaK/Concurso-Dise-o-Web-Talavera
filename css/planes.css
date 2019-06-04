@@ -249,10 +249,10 @@ div#mostrar-plan .container-fluid{
 @keyframes mostrarplan{
     from {
         transform: translateY(100%);
-        left: 47.5%;
+        left: 49.5%;
         bottom: 100%;
-        width: 5%;
-        height: 5%;
+        width: 1%;
+        height: 1%;
         border-top-left-radius: 50%;
         border-top-right-radius: 50%;
     }
@@ -269,8 +269,28 @@ div#mostrar-plan .container-fluid{
 }
 
 .img-principal{
-    max-width: 85%;
+    width: 90%;
+    left: 0;
+    bottom: 0;
+    object-fit: cover;
+    border-radius: 20px;
+    transition: width .75s, box-shadow .5s, left .5s, bottom .5s;
+    box-shadow: 0;
 }
+
+.img-principal:hover{
+    border-radius: 0;
+    position: fixed;
+    width: 70%;
+    height: 70%;
+    left: 15%;
+    bottom: 15%;
+    z-index: 1120;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.19), 0 10px 10px rgba(0,0,0,0.25);
+    border-radius: 20px;
+    object-fit: cover;
+}
+
 
 span.btn-salir-plan{
     cursor:pointer;
@@ -284,16 +304,34 @@ span.btn-salir-plan{
     color: white;
 }
 
+div.imagenes-plan{
+    width: 100%;
+    margin: 10px 0;
+}
+
+div.imagenes-plan img{
+    display:inline-block;
+    margin: 2.5px;
+    height: 70px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
 div.servicios-plan{
-    display: inline-block;
-    margin-top:15px;
+    width: 95%;
+    float:left;
+    margin-top:20px;
+    margin-bottom:10px;
+
 }
 span.servicios-plan{
     background-color: #007bff;
+    display: inline-block;
     padding: 7.5px 15px;
     border-radius: 20px;
     color: white;
-    margin-right: 20px;
+    margin-right: 5px;
+    margin-bottom:20px;
 }
 
 span.servicios-plan i{
@@ -317,34 +355,6 @@ span.me-gusta-round{
     cursor:pointer;
 }
 
-span.me-gusta-round:hover{
-    animation: mostrar-texto-btn .25s ease-in;
-    border-radius: 25px;
-    padding: 7.5px 15px;
-}
-
-span.me-gusta-round span{
-    display:none;
-    font-size:18px;
-    margin-bottom:10px;
-}
-
-span.me-gusta-round:hover span{
-    display:inline;
-    animation: aparecertxt .25s ease-in;
-}
-
-@keyframes mostrar-texto-btn{
-    from{
-        border-radius: 30%;
-        padding: 10px;
-    }
-    to{
-        border-radius: 25px;
-        padding: 7.5px 15px;
-    }
-}
-
 @keyframes aparecertxt{
     from{
         width: 0%;
@@ -362,41 +372,30 @@ span.me-gusta-round i{
 }
 
 span.me-gusta-round:hover i{
-    animation: corazon-anim 1s ease-in-out;
-    padding-right:5px;
+    animation: corazon-anim .5s ease-in-out;
 }
 
 @keyframes corazon-anim{
     0%{
-        transform: rotate(40deg);
-    }
-    10%{
-        transform: rotate(-40deg);
-    }
-    20%{
-        transform: rotate(30deg);
-    }
-    30%{
-        transform: rotate(-30deg);
-    }
-    40%{
         transform: rotate(20deg);
     }
-    50%{
+
+    20%{
         transform: rotate(-20deg);
     }
+
+    40%{
+        transform: rotate(15deg);
+    }
+
     60%{
+        transform: rotate(-15deg);
+    }
+
+    80%{
         transform: rotate(10deg);
     }
-    70%{
-        transform: rotate(-10deg);
-    }
-    80%{
-        transform: rotate(5deg);
-    }
-    90%{
-        transform: rotate(-5deg);
-    }
+
     100%{
         transform: rotate(0deg);
     }

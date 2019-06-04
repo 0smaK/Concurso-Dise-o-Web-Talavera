@@ -7,6 +7,9 @@ const lugares = {
             "mail": "comercial@hotelebora.com",
             "direccion": "Avenida de Madrid, 1, 45600 Talavera de la Reina (Toledo)",
             "telefono": "925807600",
+            "servicios":[
+                "WiFi Gratis", "Parking", "Aire acondicionado", "Restaurante", "Bar de hotel"
+            ],
             "imagenes": [
                 "./img/hotel-ebora.jpg",
                 "./img/alojamientos/habitaciones-doble-ebora.jpg"
@@ -19,6 +22,9 @@ const lugares = {
             "mail": "recepcion.talavera@belivehotels.com",
             "direccion": "Avda. de Toledo s/n, 45600, Talavera de la Reina, Toledo, España",
             "telefono": "925727200",
+            "servicios":[
+                "Aire acondicionado", "Restaurante"
+            ],
             "imagenes": [
                 "./img/alojamientos/besmart-talavera.jpg",
                 "./img/alojamientos/besmart.jpg",
@@ -30,7 +36,10 @@ const lugares = {
             "web": "http://www.hotelromaaurea.com",
             "mail": "info@hotelromaaurea.com",
             "direccion": "C/Roma, 1, 45600, Talavera de la Reina, Toledo, España",
-            "telefono": "925721675",
+            "telefono": "925721675",          
+            "servicios": [
+                "WiFi Gratis", "Parking", "Aire acondicionado", "Restaurante", "Bar de hotel"
+            ],
             "imagenes": [
                 "./img/alojamientos/hotel-roma-0.jpg",
                 "./img/alojamientos/hotel-roma-1.jpg",
@@ -46,6 +55,7 @@ const lugares = {
             "mail": "info@hotelperales.es",
             "direccion": "Avda. de Pío XII, 3, 45600, Talavera de la Reina, Toledo, España",
             "telefono": "925803900",
+            "servicios": ["WiFi Gratis", "Aire acondicionado", "Restaurante", "Bar de hotel"],
             "imagenes": [
                 "./img/alojamientos/perales.jpg",
                 "./img/alojamientos/perales-1.jpg",

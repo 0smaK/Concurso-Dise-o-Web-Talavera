@@ -53,38 +53,73 @@ function mostrarLugares(tipo) {
     }
 }
 
+function obtenerServicios(lugar) {
+    let servicios = ""
+    for (let servicio of lugar['servicios']) {
+        if (typeof servicio !== 'undefined') {
+            let servicioMin = servicio.toLowerCase()
+            if (servicioMin.includes('wifi')) servicios += `<span class="servicios-plan"><i class="fas fa-wifi"></i> ${servicio}</span>`
+            else if (servicioMin.includes('parking')) servicios += `<span class="servicios-plan"><i class="fas fa-parking"></i> ${servicio}</span>`
+            else if (servicioMin.includes('aire acondicionado')) servicios += `<span class="servicios-plan"><i class="far fa-snowflake"></i> ${servicio}</span>`
+            else if (servicioMin.includes('restaurante')) servicios += `<span class="servicios-plan"><i class="fas fa-utensils"></i> ${servicio}</span>`
+            else if (servicioMin.includes('bar')) servicios += `<span class="servicios-plan"><i class="fas fa-glass-martini-alt"></i> ${servicio}</span>`
+            else servicios += `<span class="servicios-plan">${servicio}</span>`
+        }
+    }
+    return servicios
+}
+
+function seleccionarImg(img){
+    console.log(img)
+    $('.img-principal').attr('src',img)
+}
+
+function obtenerImagenes(lugar) {
+    let imagenes = ""
+    for (let imagen of lugar['imagenes']) {
+        if (typeof imagen !== 'undefined') {
+            imagenes += `<img src="${imagen}" alt="foto de ${lugar["nombre"]}" onclick="seleccionarImg('${imagen}')">`
+        }
+    }
+    return imagenes
+}
+
 function mostrarInfo(lugar) {
+    let servicios = obtenerServicios(lugar)
+    let imagenes = obtenerImagenes(lugar)
     let html = `
-    <span class="btn-salir-plan" onclick="salirPlan()">
-    <i class="fas fa-times"></i> &nbsp;Salir
-</span>
-<span class="me-gusta-round">
-    <i class="far fa-heart"></i><span> Añadir a me gusta</span>
-</span>
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-md-12 col-lg-5 text-center">
-            <img class="img-principal" src="${lugar['imagenes'][0]}" alt="">
-        </div>
-        <div class="col-md-12 col-lg-7">
-            <h3 class="oswald">${lugar['nombre']}</h3>
-            <div class="servicios-plan">
-                <span class="servicios-plan"><i class="fas fa-wifi"></i> WiFi Gratis</span>
-                <span class="servicios-plan"><i class="fas fa-parking"></i> Parking</span>
+        <span class="btn-salir-plan" onclick="salirPlan()">
+        <i class="fas fa-times"></i> &nbsp;Salir
+    </span>
+    <span class="me-gusta-round">
+        <i class="far fa-heart"></i>
+    </span>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 col-lg-5 text-center">
+                <img class="img-principal" src="${lugar['imagenes'][0]}" alt="">
+                <div class="imagenes-plan text-center">
+                    ${imagenes}
+                </div>
             </div>
-            <div class="descripcion-plan">
-                <p align="justify">
-                    ${lugar['descripcion']}
-                </p>
+            <div class="col-md-12 col-lg-7">
+                <h3 class="oswald">${lugar['nombre']}</h3>
+                <div class="servicios-plan">
+                   ${servicios}
+                </div>
+                <div class="descripcion-plan">
+                    <p align="justify">
+                        ${lugar['descripcion']}
+                    </p>
+                </div>
             </div>
         </div>
     </div>
-</div>
-    `
+        `
     $('#mostrar-plan').html('')
-    setTimeout(()=>{
+    setTimeout(() => {
         $('#mostrar-plan').append(html)
-    },250)
+    }, 250)
 }
 
 function abrirPlan(tipo, nombre) {
