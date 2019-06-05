@@ -37,6 +37,7 @@
     <script src="./js/buscador.js"></script>
     <script src="./js/planes.js"></script>
     <script src="./json/lugares.js"></script>
+    <script src="./js/meGusta.js"></script>
 
     <!-- link de estilos css propios -->
     <link rel="stylesheet" href="./css/estilos.css">
@@ -135,13 +136,15 @@
             <div class="col-12 text-center">
                 <div class="filtros">
                     <span class="filtros t-filtros"><i class="fas fa-filter"></i> Filtros</span>
-                    <span id="todos" class="filtros f-filtros active" onclick="setFiltro('todos')"><i
+                    <span id="todos" class="filtros f-filtros active" onclick="setFiltro('todos','alojamientos')"><i
                             class="fas fa-globe-europe"></i> Todos los
                         alojamientos</span>
-                    <span id="favs" class="filtros f-filtros" onclick="setFiltro('favs')"><i class="fas fa-heart"></i>
+                    <span id="favs" class="filtros f-filtros" onclick="setFiltro('favs','alojamientos')"><i
+                            class="fas fa-heart"></i>
                         Marcados como me
                         gusta</span>
-                    <span id="vistos" class="filtros f-filtros" onclick="setFiltro('vistos')"><i class="fas fa-eye"></i>
+                    <span id="vistos" class="filtros f-filtros" onclick="setFiltro('vistos','alojamientos')"><i
+                            class="fas fa-eye"></i>
                         Vistos recientemente</span>
                 </div>
             </div>
@@ -157,6 +160,11 @@
                     <div class="no-likes text-center">
                         <i class="fas fa-heart-broken"></i>
                         <span>Ups! Parece que no tienes ningún alojamiento marcado como favorito</span>
+                    </div>
+                    <div class="con-likes text-center">
+                        <div class="row">
+                            
+                        </div>
                     </div>
                 </div>
                 <div class="vistos d-none">
@@ -222,7 +230,7 @@
     </div>
 
     <div id="mostrar-plan" class="d-none">
-        
+
     </div>
 </body>
 

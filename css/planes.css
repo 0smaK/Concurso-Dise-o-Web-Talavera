@@ -225,7 +225,7 @@ span.me-gusta{
     border:1px solid crimson;
 }
 
-span.me-gusta:hover{
+span.me-gusta:hover,span.me-gusta.active{
     background-color: crimson;
     color: white;
     border: 1px solid crimson;
@@ -269,12 +269,14 @@ div#mostrar-plan .container-fluid{
 }
 
 .img-principal{
-    width: 90%;
+    height: 300px;
+    width: auto;
+    max-width: 90%;
     left: 0;
     bottom: 0;
     object-fit: cover;
     border-radius: 20px;
-    transition: width .75s, box-shadow .5s, left .5s, bottom .5s;
+    transition: width .75s ease, box-shadow .5s ease, left .5s ease, bottom .5s ease;
     box-shadow: 0;
 }
 
@@ -290,7 +292,6 @@ div#mostrar-plan .container-fluid{
     border-radius: 20px;
     object-fit: cover;
 }
-
 
 span.btn-salir-plan{
     cursor:pointer;

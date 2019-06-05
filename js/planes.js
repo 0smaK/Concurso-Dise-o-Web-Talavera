@@ -4,7 +4,7 @@ setTimeout(() => {
     mostrarLugares('alojamientos')
 }, 250)
 
-function setFiltro(filtro) {
+function setFiltro(filtro, tipo) {
     switch (filtro) {
         case 'todos':
             $('.f-filtros').removeClass('active')
@@ -14,6 +14,7 @@ function setFiltro(filtro) {
             break;
 
         case 'favs':
+            mostrarMeGustas(tipo)
             $('.f-filtros').removeClass('active')
             $('#favs').addClass('active')
             $('.favs').removeClass('d-none')
@@ -43,13 +44,19 @@ function mostrarLugares(tipo) {
                     <h3 class="card-title oswald">${lugar['nombre']}</h3>
                     <p align="justify" class="card-text">${lugar['descripcion'].length > 275 ? lugar['descripcion'].slice(0, 275) + "<i style='color:grey'>... Seguir leyendo</i>" : lugar['descripcion']}</p>
                     <div class="text-center">
-                        <span class="me-gusta"><i class="fa fa-heart"></i>  &nbsp;Me gusta</span>
+                        <span id="${lugar["nombre"].replace(/[\W_]/g, "-")}" onclick="meGusta('${lugar['nombre']}','${tipo}',true)" class="me-gusta"><i class="fa fa-heart"></i>  &nbsp;Me gusta</span>
                     </div>
                 </div>
             </div>
         </div>
         `
         $('.todos .row').append(cardHTML)
+    }
+    let favs = getMeGusta()
+    if(favs != null){
+        for(let fav of favs){
+            $(`span#${fav.nombre.replace(/[\W_]/g, "-")}`).addClass('active')
+        }
     }
 }
 
@@ -69,9 +76,8 @@ function obtenerServicios(lugar) {
     return servicios
 }
 
-function seleccionarImg(img){
-    console.log(img)
-    $('.img-principal').attr('src',img)
+function seleccionarImg(img) {
+    $('.img-principal').attr('src', img)
 }
 
 function obtenerImagenes(lugar) {
@@ -84,14 +90,14 @@ function obtenerImagenes(lugar) {
     return imagenes
 }
 
-function mostrarInfo(lugar) {
+function mostrarInfo(lugar, tipo) {
     let servicios = obtenerServicios(lugar)
     let imagenes = obtenerImagenes(lugar)
     let html = `
         <span class="btn-salir-plan" onclick="salirPlan()">
         <i class="fas fa-times"></i> &nbsp;Salir
     </span>
-    <span class="me-gusta-round">
+    <span id="${lugar["nombre"].replace(/[\W_]/g, "-")}" onclick="cambiarCorazon('${lugar['nombre']}');meGusta('${lugar['nombre']}','${tipo}',false)" class="me-gusta-round">
         <i class="far fa-heart"></i>
     </span>
     <div class="container-fluid">
@@ -119,6 +125,9 @@ function mostrarInfo(lugar) {
     $('#mostrar-plan').html('')
     setTimeout(() => {
         $('#mostrar-plan').append(html)
+        setTimeout(()=>{
+            cambiarCorazones();
+        },100)
     }, 250)
 }
 
@@ -139,7 +148,7 @@ function abrirPlan(tipo, nombre) {
         $('#mostrar-plan').css('overflow-y', 'auto')
     }, 500)
 
-    mostrarInfo(lugarSel)
+    mostrarInfo(lugarSel, tipo)
 }
 
 function salirPlan() {
@@ -155,4 +164,12 @@ function salirPlan() {
         $('body').css('overflow', 'auto')
         $('#mostrar-plan').removeAttr('style')
     }, 850)
+}
+
+function salirPlanExc() {
+    setTimeout(() => {
+        $('#mostrar-plan').addClass("d-none")
+        $('body').css('overflow', 'auto')
+        $('#mostrar-plan').removeAttr('style')
+    }, 20)
 }
