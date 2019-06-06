@@ -67,13 +67,33 @@ const lugares = {
     ],
     "restaurantes": [
         {
-            "nombre": "",
-            "descripcion": "",
+            "nombre": "Al Bosco",
+            "descripcion": "Restaurante griego en Talavera de la Reina",
             "web": "",
             "mail": "",
-            "direccion": "",
-            "telefono": "",
-            "imagenes": []
+            "direccion": "Camino de las Torres s/n, 45600 Talavera de la Reina, España",
+            "telefono": "618927506",
+            "imagenes": [
+                "./img/restaurantes/al-bosco.jpg",
+                "./img/restaurantes/al-bosco-1.jpg",
+                "./img/restaurantes/al-bosco-2.jpg",
+                "./img/restaurantes/al-bosco-3.jpg"
+            ]
+        },
+        {
+            "nombre": "Restaurante Amaranto",
+            "descripcion": "En Restaurante Amaranto Podra disfrutar de nuestra alta cocina destinada a satisfacer los gustos de los mas altos comensales. Nuestra cocina es una fusion de comida tradicional con la inovacion de la alta cocina lo que la hace una cocina de autor.",
+            "web": "http://www.restauranteamarantotalavera.com/",
+            "mail": "amarantotalavera@gmail.com",
+            "direccion": "Calle Gregorio de los ríos, 2-3. Talavera de la Reina (Toledo) 45600",
+            "telefono": "925808450",
+            "imagenes": [
+                "./img/restaurantes/amaranto.jpg",
+                "./img/restaurantes/amaranto-1.jpg",
+                "./img/restaurantes/amaranto-2.jpg",
+                "./img/restaurantes/amaranto-3.jpg",
+                "./img/restaurantes/amaranto-4.jpg"
+            ]
         }
     ]
 }
