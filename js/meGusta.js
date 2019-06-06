@@ -4,6 +4,7 @@ let lugaresFAV = []
 
 $(document).ready(() => {
     let favs = getMeGusta()
+    if(favs == null) favs = []
     for(let fav of favs){
         cambiarCorazon(fav.nombre)
     }
@@ -42,6 +43,7 @@ function meGusta(nombre, tipo, fuera) {
     } else {
         $(`span#${nombre.replace(/[\W_]/g, "-")}`).removeClass('active')
         lugaresFAV = getMeGusta()
+        if(lugaresFAV == null) lugaresFAV = []
         if(lugaresFAV.length > 0){
             let existe = false
             existe = lugaresFav.filter(fav => {
@@ -61,6 +63,7 @@ function mostrarMeGustas(tipo) {
     $('.favs .con-likes').removeClass('d-none')
     $('.favs .no-likes').addClass('d-none')
     let favs = getMeGusta()
+    if(favs == null) favs = []
     if (favs.length < 1) mostrarNoTienesMeGusta()
     $('.favs .row').html('')
     for (let fav of favs.reverse()) {
