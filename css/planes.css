@@ -55,6 +55,22 @@ input.buscador{
     cursor: pointer;
 }
 
+@media only screen and (max-width: 750px) {
+    input.buscador{
+        width: 50%;
+        left:25%;
+    }
+
+    .buscador .buscar{
+        left:calc(25% + 35px);
+    }
+    
+    .buscador .limpiar{
+        right:calc(25% + 5px);
+    }
+}
+
+
 .busqueda{
     position: absolute;
     top:150px;
@@ -151,6 +167,7 @@ input.buscador{
     display: block;
 }
 
+
 div.filtros{
     transform: translateY(-10px);
     margin:5px;
@@ -161,12 +178,66 @@ div.filtros{
     padding:12.5px;
     border-radius: 20px;
 }
+@media only screen and (max-width: 700px) {
+    div.filtros{
+        margin-top: 40px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    div.filtros{
+        margin-top: 100px;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    div.filtros{
+        margin-top: 125px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    div.filtros{
+        margin-top: 160px;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    div.filtros{
+        margin-top: 210px;
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    div.filtros{
+        margin-top: 235px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    div.filtros{
+        margin-top: 260px;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    div.filtros{
+        margin-top: 285px;
+    }
+}
+
+@media only screen and (max-width: 350px) {
+    div.filtros{
+        margin-top: 310px;
+    }
+}
 
 span.filtros{
     border-radius: 20px;
     padding:7.5px 15px;
     margin:2.5px;
     cursor: pointer;
+    display: inline-block;
     z-index: 2002;
 }
 
@@ -335,7 +406,29 @@ span.servicios-plan{
     margin-bottom:20px;
 }
 
-span.servicios-plan i{
+span.links-plan{
+    background-color: white;
+    display: inline-block;
+    padding: 7.5px 15px;
+    border-radius: 20px;
+    color: #007bff;
+    border: 1px solid #007bff;
+    margin-right: 5px;
+    margin-bottom:20px;
+}
+
+span.links-plan:hover{
+    background-color: #007bff;
+    display: inline-block;
+    padding: 7.5px 15px;
+    border-radius: 20px;
+    color: white;
+    border: 1px solid #007bff;
+    margin-right: 5px;
+    margin-bottom:20px;
+}
+
+span.servicios-plan i,span.links-plan i{
     margin-right: 7.5px;
 }
 
@@ -423,4 +516,8 @@ span.me-gusta-round:hover i{
     to {
         transform: translateX(-300px);
     }
+}
+
+.localizacion-maps iframe{
+    margin: 25px 0;
 }

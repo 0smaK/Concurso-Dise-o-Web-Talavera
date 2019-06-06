@@ -6,8 +6,9 @@ const lugares = {
             "web": "https://www.hotelebora.com/",
             "mail": "comercial@hotelebora.com",
             "direccion": "Avenida de Madrid, 1, 45600 Talavera de la Reina (Toledo)",
-            "telefono": "925807600",
-            "servicios":[
+            "telefono": "925 80 76 00",
+            "maps": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3058.069263913838!2d-4.820305685089299!3d39.962204091081645!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd401c070aeb5a71%3A0x713f5722c321a6c0!2sHotel+Ebora!5e0!3m2!1ses!2ses!4v1559849351140!5m2!1ses!2ses",
+            "servicios": [
                 "WiFi Gratis", "Parking", "Aire acondicionado", "Restaurante", "Bar de hotel"
             ],
             "imagenes": [
@@ -21,8 +22,9 @@ const lugares = {
             "web": "https://www.belivehotels.com/hotel/ES/ficha_hotel/talavera/descripcion.jsp",
             "mail": "recepcion.talavera@belivehotels.com",
             "direccion": "Avda. de Toledo s/n, 45600, Talavera de la Reina, Toledo, España",
-            "telefono": "925727200",
-            "servicios":[
+            "telefono": "925 72 72 00",
+            "maps": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3058.0407377280817!2d-4.827923885089271!3d39.962841891043254!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd401c09faeb85a3%3A0x7650677bb22375f2!2sBe+Live+City+Center+Talavera!5e0!3m2!1ses!2ses!4v1559850982315!5m2!1ses!2ses",
+            "servicios": [
                 "Aire acondicionado", "Restaurante"
             ],
             "imagenes": [
@@ -36,7 +38,8 @@ const lugares = {
             "web": "http://www.hotelromaaurea.com",
             "mail": "info@hotelromaaurea.com",
             "direccion": "C/Roma, 1, 45600, Talavera de la Reina, Toledo, España",
-            "telefono": "925721675",          
+            "telefono": "925 72 16 75",
+            "maps": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3057.926070088358!2d-4.813729685089207!3d39.9654055908887!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd401bffcdd2c4d9%3A0xed4f968aa1478d5e!2sHotel+Roma+Aurea!5e0!3m2!1ses!2ses!4v1559851059345!5m2!1ses!2ses",
             "servicios": [
                 "WiFi Gratis", "Parking", "Aire acondicionado", "Restaurante", "Bar de hotel"
             ],
@@ -54,7 +57,8 @@ const lugares = {
             "web": "http://www.hotelperales.es/",
             "mail": "info@hotelperales.es",
             "direccion": "Avda. de Pío XII, 3, 45600, Talavera de la Reina, Toledo, España",
-            "telefono": "925803900",
+            "telefono": "925 80 39 00",
+            "maps": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3057.9913325908433!2d-4.82196658508926!3d39.96394649097664!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd401bf80d5ec269%3A0x76150687b94ac3d8!2sHotel+Perales!5e0!3m2!1ses!2ses!4v1559851083630!5m2!1ses!2ses",
             "servicios": ["WiFi Gratis", "Aire acondicionado", "Restaurante", "Bar de hotel"],
             "imagenes": [
                 "./img/alojamientos/perales.jpg",
@@ -72,7 +76,8 @@ const lugares = {
             "web": "",
             "mail": "",
             "direccion": "Camino de las Torres s/n, 45600 Talavera de la Reina, España",
-            "telefono": "618927506",
+            "telefono": "618 92 75 06",
+            "maps": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3057.522365525257!2d-4.8087895850889035!3d39.97443039034487!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd401959dfa16b1d%3A0x502f766e7c3e5d90!2sRestaurante+Al+Bosco!5e0!3m2!1ses!2ses!4v1559851187990!5m2!1ses!2ses",
             "imagenes": [
                 "./img/restaurantes/al-bosco.jpg",
                 "./img/restaurantes/al-bosco-1.jpg",
@@ -86,7 +91,8 @@ const lugares = {
             "web": "http://www.restauranteamarantotalavera.com/",
             "mail": "amarantotalavera@gmail.com",
             "direccion": "Calle Gregorio de los ríos, 2-3. Talavera de la Reina (Toledo) 45600",
-            "telefono": "925808450",
+            "telefono": "925 80 84 50",
+            "maps": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3058.1469195923523!2d-4.820458785089339!3d39.960467791186346!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd401c065639aeaf%3A0x15d8809eb8fdecf!2sAmaranto!5e0!3m2!1ses!2ses!4v1559851261345!5m2!1ses!2ses",
             "imagenes": [
                 "./img/restaurantes/amaranto.jpg",
                 "./img/restaurantes/amaranto-1.jpg",
@@ -94,6 +100,9 @@ const lugares = {
                 "./img/restaurantes/amaranto-3.jpg",
                 "./img/restaurantes/amaranto-4.jpg"
             ]
+        },
+        {
+
         }
     ]
 }
