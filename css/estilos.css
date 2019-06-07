@@ -326,7 +326,7 @@ div.chatbot-container{
     bottom: 0;
     right: 0;
     margin: 1em;
-    z-index: 2002;
+    z-index: 6002;
 }
 
 .hide-chatbot{
@@ -378,7 +378,7 @@ div.chatbot{
     margin-right: 15px;
     margin-bottom: 75px;
     background-color:white;
-    z-index: 1000;
+    z-index: 10000;
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
     border-radius: 20px;
     animation: mostrar-chatbot-d .5s ease-in-out;
@@ -566,4 +566,13 @@ img.chatbot-img-perfil{
 #ajustes-chat{
     float:right;
     margin-right: 20px;
+}
+
+@media only screen and (max-width: 768px){
+    .titulo{
+        font-size: 1.5rem
+    }
+    .subtitulo{
+        font-size: 1rem;
+    }
 }
