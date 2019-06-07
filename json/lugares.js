@@ -115,6 +115,77 @@ const lugares = {
                 "./img/restaurantes/antiquario-2.jpg",
                 "./img/restaurantes/antiquario-3.jpg"
             ]
+        },
+        {
+            "nombre": "Antonio Bar Restaurante",
+            "descripcion": "En Talavera de la Reina, el restaurante Antonio es un lugar con años de experiencia que ofrece una amplia carta de platos elaborados con los productos de la tierra. Cocina casera, tradicional y cercana que se traduce en recetas sabrosas y ricas no solo en calidad sino también en cantidad. En el restaurante Antonio degustareis la auténtica cocina casera castellana.",
+            "web": "",
+            "mail": "antiquario.boreal@gmail.com",
+            "direccion": "Avda. de Madrid, 1 (junto a Hotel Ebora), 45600, Talavera de la Reina (Toledo) ",
+            "telefono": "925 804 017",
+            "maps": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3058.2301225024516!2d-4.843259185089385!3d39.95860739129841!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd401c775d2cd817%3A0x8c0ab8dba3db88a6!2sBar+Restaurante+Antonio!5e0!3m2!1ses!2ses!4v1559935373838!5m2!1ses!2ses",
+            "imagenes": [
+                "./img/restaurantes/antonio.jpg",
+                "./img/restaurantes/antonio-1.jpg",
+                "./img/restaurantes/antonio-2.jpg",
+                "./img/restaurantes/antonio-3.jpg",
+                "./img/restaurantes/antonio-4.jpg"
+            ]
+        },
+        {
+            "nombre": "Bowling Center",
+            "descripcion": "Bowling Center es el buque insignia de Complejo Estoril. Más de 1800 ms cuadrados de instalaciones modernas y adaptadas, que cuenta entre sus principales características con una bolera profesional dotada con diez pistas de última tecnología, una cocina capaz de dar servicio a más de cuatrocientos comensales, una zona infantil con piscinas de bolas, máquinas recreativas, talleres de dibujo y pintura, personal especializado en cuidados infantiles, más de ocho pantallas de plasma y dos pantallas gigantes de 250 pulgadas en las que se pueden visionar todos los eventos deportivos relevantes y vídeos musicales. Todo atendido por una plantilla joven y servicial de más de veinticinco personas que dan un trato personalizado y profesional a nuestra clientela.",
+            "web": "http://complejoestoril.com/bowlingcenter/",
+            "mail": "publicidad@ComplejoEstoril.com ",
+            "direccion": "Avda. Madrid, s/n (Comp.Estoril), Talavera de la Reina",
+            "telefono": "925 82 25 91",
+            "maps": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3058.0120143654517!2d-4.812678685089244!3d39.963484091004595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd401eaad5f8239f%3A0xdc5f5412e531d233!2sBowling+Center!5e0!3m2!1ses!2ses!4v1559935725079!5m2!1ses!2ses",
+            "imagenes": [
+                "./img/restaurantes/bowling.jpg",
+                "./img/restaurantes/bowling-1.jpg"
+            ]
+        },
+        {
+            "nombre": "Burger King",
+            "descripcion": "Cada día más de 11 millones de clientes visitan los restaurantes BURGER KING® alrededor del mundo. Y lo hacen porque nuestros restaurantes son reconocidos por servir productos de alta calidad, gran sabor, hamburguesas 100% hechas a la parrilla y a un precio accesible. Fundada en 1954, Burger King Corporation ha creado la segunda cadena de hamburguesas más grande en el mundo. Hogar original de la hamburguesa WHOPPER®, en donde encontrarás productos y servicios de calidad que te proporcionarán una gran experiencia. Nuestro compromiso es ofrecer ingredientes de alta calidad, cocinar siguiendo nuestras recetas originales y crear experiencias únicas. Eso es lo que define a nuestra marca durante más de 60 exitosos años.",
+            "web": "http://www.burgerking.es",
+            "mail": "",
+            "direccion": "Av. Extremadura, 8, 45600 Talavera de la Reina, Toledo",
+            "telefono": "925 80 86 98",
+            "maps": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12232.044442082788!2d-4.8192447708283614!3d39.96350429912124!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd401c09b62710bf%3A0x8d2d021ecbc2eb0b!2sBurger+King!5e0!3m2!1ses!2ses!4v1559936602153!5m2!1ses!2ses",
+            "imagenes": [
+                "./img/restaurantes/burger-king.jpg",
+                "./img/restaurantes/burger-king-1.jpg",
+                "./img/restaurantes/burger-king-2.jpg",
+                "./img/restaurantes/burger-king-3.jpg",
+            ]
+        },
+        {
+            "nombre": "El Birrete",
+            "descripcion": "Colegiata de Santa Maria la Mayor es un añadido perfecto a la impresión que te va a dejar este bar. Basándonos en las opiniones de los críticos, los camareros te sirven aquí unas bien trabajadas tapas. Sus de confianza camareros y camareras reflejan el estilo y el carácter de El Birrete. Su servicio siempre es bueno, tenlo en cuenta. Ven aquí si buscas un espectacular ambiente. Pero este lugar no ha obtenido una puntuación muy alta por parte de los usuarios de Google.",
+            "web": "",
+            "mail": "",
+            "direccion": "C/ San Clemente, 18, 45600 Talavera de la Reina, Toledo",
+            "telefono": "925 97 87 01",
+            "maps": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3058.2799380531815!2d-4.836570685089472!3d39.95749349136549!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd401c738719fd3d%3A0x1a2708f0dc396d7!2sCaf%C3%A9+El+Birrete!5e0!3m2!1ses!2ses!4v1559937399728!5m2!1ses!2ses",
+            "imagenes": [
+                "./img/restaurantes/birrete.jpg"
+            ]
+        },
+        {
+            "nombre": "El Coto",
+            "descripcion": "Local acogedor decorado con grandes murales de ceramica de Talavera que hacen que la visita sea obligada en el paso por la ciudad, con un ambiente tranquilo y relajado. Destaca por su comida casera y tradicional bien elaborada con platos como los chipirones en su tinta, el pisto manchego con queso de cabra y ventresca o guisos como las manitas de cerdo o el rabo de toro, etc. Y todo ello acompañado de unos buenos caldos de su bodega.",
+            "web": "http://www.restauranteelcoto.es/",
+            "mail": "",
+            "direccion": "Avda. de Toledo, 24, 45600 Talavera de la Reina, Toledo",
+            "telefono": "925 80 10 59",
+            "maps": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3058.006325108214!2d-4.826867085089235!3d39.96361129099687!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd401bf622e0162d%3A0x9010fc01aa8903bb!2sRestaurante+El+Coto!5e0!3m2!1ses!2ses!4v1559938241286!5m2!1ses!2ses",
+            "imagenes": [
+                "./img/restaurantes/el-coto.jpg",
+                "./img/restaurantes/el-coto-1.jpg",
+                "./img/restaurantes/el-coto-2.jpg",
+                "./img/restaurantes/el-coto-3.jpg"
+            ]
         }
     ]
 }
