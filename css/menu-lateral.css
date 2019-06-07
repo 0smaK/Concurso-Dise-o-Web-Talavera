@@ -9,7 +9,7 @@
     -webkit-animation: blueTalaveraGradient 10s ease infinite;
     -moz-animation: blueTalaveraGradient 10s ease infinite;
     animation: blueTalaveraGradient 10s ease infinite;
-    z-index: 2020;
+    z-index: 10020;
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
 
@@ -19,7 +19,7 @@
     height: 100%;
     right: 0;
     top: 0;
-    z-index: 2020;
+    z-index: 10020;
 }
 
 .hide-menu{
@@ -56,7 +56,7 @@
     cursor: pointer;
     color: white;
     position: absolute;
-    top: 5%;
+    top: calc(64px + 5%);
     right: 5%;
     font-size: 36px;
 }
@@ -75,6 +75,23 @@
     padding-top:10%;
     font-family: 'Montserrat', sans-serif!important;
     text-align:center;
+}
+
+@media only screen and (max-width: 840px){
+    .pronostico-tiempo{
+        display: none;
+    }
+
+    .menu-lateral{
+        width: 100%;
+    }
+
+    .menu-lateral-out{
+        display: none;
+    }
+    .submenu-item{
+        margin-left:10%;
+    }
 }
 
 .pronostico-tiempo-in{
@@ -141,7 +158,6 @@ hr.separador{
     background-size: 200% 100%;
     background-position: right bottom;
     transition: all .5s ease-in-out;
-
 }
 
 .submenu-item:hover{
