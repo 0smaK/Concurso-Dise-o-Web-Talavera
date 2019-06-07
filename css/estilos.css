@@ -177,6 +177,12 @@ nav.navbar{
 
 }
 
+@media only screen and (max-width: 768px) {
+    .contenido-carousel,.carousel-item:before,.carousel img{
+        max-height: 200px;
+    }
+}
+
 .contenido-carousel-child {
     position: relative;
     display: table-cell;

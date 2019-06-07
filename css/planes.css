@@ -55,21 +55,16 @@ input.buscador{
     cursor: pointer;
 }
 
-@media only screen and (max-width: 750px) {
-    input.buscador{
-        width: 50%;
-        left:25%;
+@media only screen and (min-width: 768px) {
+    .movil{
+        display:none;
     }
 
-    .buscador .buscar{
-        left:calc(25% + 35px);
+    .movil h2{
+        display:none;
     }
-    
-    .buscador .limpiar{
-        right:calc(25% + 5px);
-    }
+
 }
-
 
 .busqueda{
     position: absolute;
@@ -99,6 +94,45 @@ input.buscador{
 .card-busqueda:hover{
     box-shadow: 0 14px 28px rgba(0,0,0,0.19), 0 10px 10px rgba(0,0,0,0.25);
 }
+
+@media only screen and (max-width: 768px) {
+    .alojamientos-card{
+        display: none;
+    }
+
+    input.buscador{
+        z-index:5000;
+        top:220px;
+        width: 90%;
+        left:2%;
+    }
+
+    .buscador .buscar{
+        z-index:5001;
+        top:252px;
+        left: 42.5px;
+    }
+    
+    .buscador .limpiar{
+        z-index:5001;
+        top:252px;
+        right: 7%;
+    }
+
+    .movil{
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .movil h2{
+        margin-top: 30px;
+    }
+
+    .busqueda{
+        top:90px;
+    }
+}
+
 
 @keyframes aparecer-card{
     from {
@@ -175,62 +209,11 @@ div.filtros{
     display: inline-block;
     z-index: 500;
     background-color:#007bff;
-    padding:12.5px;
+    padding:5px;
     border-radius: 20px;
-}
-@media only screen and (max-width: 700px) {
-    div.filtros{
-        margin-top: 40px;
-    }
+    width: auto;
 }
 
-@media only screen and (max-width: 600px) {
-    div.filtros{
-        margin-top: 100px;
-    }
-}
-
-@media only screen and (max-width: 550px) {
-    div.filtros{
-        margin-top: 125px;
-    }
-}
-
-@media only screen and (max-width: 500px) {
-    div.filtros{
-        margin-top: 160px;
-    }
-}
-
-@media only screen and (max-width: 450px) {
-    div.filtros{
-        margin-top: 210px;
-    }
-}
-
-@media only screen and (max-width: 425px) {
-    div.filtros{
-        margin-top: 235px;
-    }
-}
-
-@media only screen and (max-width: 400px) {
-    div.filtros{
-        margin-top: 260px;
-    }
-}
-
-@media only screen and (max-width: 375px) {
-    div.filtros{
-        margin-top: 285px;
-    }
-}
-
-@media only screen and (max-width: 350px) {
-    div.filtros{
-        margin-top: 310px;
-    }
-}
 
 span.filtros{
     border-radius: 20px;
@@ -266,7 +249,21 @@ span.filtros.f-filtros:hover{
     border: 1px solid #0050a7;
 }
 
+@media only screen and (max-width: 768px) {
+    div.filtros{
+        margin-top: 20px;
+    }   
+}
+
+@media only screen and (max-width: 997px){
+    .filtros .filtros.t-filtros{
+        display:none;
+    }
+}
+
 .card-plans{
+    margin-left:20px;
+    width: 100%;
     cursor: pointer;
     border-radius:20px;
     margin-top:15px;
@@ -539,7 +536,8 @@ span.me-gusta-round:hover i{
 }
 
 .vistos-true  > .borrar-historial > span > i {
-    padding-left: 5px;
+    padding-right: 5px;
+    padding-left: 2.5px;
 }
 
 .vistos-true  > .borrar-historial{
