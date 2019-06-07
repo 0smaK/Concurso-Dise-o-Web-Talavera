@@ -45,9 +45,7 @@ function meGusta(nombre, tipo, fuera) {
         lugaresFAV = getMeGusta()
         if (lugaresFAV == null) lugaresFAV = []
         if (lugaresFAV.length > 0) {
-            if (lugaresFav.filter(fav => {
-                return fav.nombre === nombre
-            })) {
+            if (lugaresFav.filter(fav => { return fav.nombre === nombre})) {
                 lugaresFAV.splice(lugaresFAV.findIndex(fav => fav.nombre === nombre), 1)
                 localStorage.removeItem("lugaresFAV")
                 setMeGusta(lugaresFAV)

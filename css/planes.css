@@ -415,6 +415,7 @@ span.links-plan{
     border: 1px solid #007bff;
     margin-right: 5px;
     margin-bottom:20px;
+    transition: background-color .35s ease-in-out, color .35s ease-in-out;
 }
 
 span.links-plan:hover{
@@ -520,4 +521,30 @@ span.me-gusta-round:hover i{
 
 .localizacion-maps iframe{
     margin: 25px 0;
+}
+
+.vistos-true  > .borrar-historial > span {
+    color: #007bff;
+    border: 1px solid #007bff;
+    background-color: white;
+    border-radius: 20px;
+    padding: 7.5px 10px;
+}
+
+.vistos-true  > .borrar-historial > span:hover {
+    color: white;
+    background-color: #007bff; 
+    border: 1px solid #007bff;
+    cursor: pointer;
+}
+
+.vistos-true  > .borrar-historial > span > i {
+    padding-left: 5px;
+}
+
+.vistos-true  > .borrar-historial{
+    position: fixed;
+    bottom: 5%;
+    left: 5%;
+    z-index: 5000;
 }

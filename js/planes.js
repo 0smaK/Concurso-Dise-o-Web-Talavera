@@ -22,6 +22,7 @@ function setFiltro(filtro, tipo) {
             break;
 
         case 'vistos':
+            verHistorial(tipo)
             $('.f-filtros').removeClass('active')
             $('#vistos').addClass('active')
             $('.vistos').removeClass('d-none')
@@ -167,6 +168,7 @@ function abrirPlan(tipo, nombre) {
     }, 500)
 
     mostrarInfo(lugarSel, tipo)
+    addHistorial(nombre, tipo)
 }
 
 function salirPlan() {
