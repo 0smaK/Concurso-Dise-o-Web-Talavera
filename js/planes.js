@@ -1,8 +1,5 @@
 'use strict'
 
-setTimeout(() => {
-    mostrarLugares('alojamientos')
-}, 250)
 
 function setFiltro(filtro, tipo) {
     switch (filtro) {
@@ -40,7 +37,7 @@ function mostrarLugares(tipo) {
         let cardHTML = `
         <div class="col-12 col-md-6 col-lg-4">
             <div class="card card-plans" onclick="abrirPlan(${"'" + tipo + "'"},${"'" + lugar['nombre'] + "'"})">
-                <img class="card-img-top" style="height:175px; object-fit:cover;" src="${lugar['imagenes'][0]}" alt="${lugar['nombre']}">
+                <img class="card-img-top" style="height:175px; object-fit:cover;" src="${lugar['imagenes'][0] != undefined ? lugar['imagenes'][0] : ""}" alt="${lugar['nombre']}">
                 <div class="card-body">
                     <h3 class="card-title oswald">${lugar['nombre']}</h3>
                     <p align="justify" class="card-text">${lugar['descripcion'].length > 275 ? lugar['descripcion'].slice(0, 275) + "<i style='color:grey'>... Seguir leyendo</i>" : lugar['descripcion']}</p>
@@ -63,25 +60,26 @@ function mostrarLugares(tipo) {
 
 function obtenerServicios(lugar) {
     let servicios = ""
-    for (let servicio of lugar['servicios']) {
-        if (typeof servicio !== 'undefined') {
-            let servicioMin = servicio.toLowerCase()
-            if (servicioMin.includes('wifi')) servicios += `<span class="servicios-plan"><i class="fas fa-wifi"></i> ${servicio}</span>`
-            else if (servicioMin.includes('parking')) servicios += `<span class="servicios-plan"><i class="fas fa-parking"></i> ${servicio}</span>`
-            else if (servicioMin.includes('aire acondicionado')) servicios += `<span class="servicios-plan"><i class="far fa-snowflake"></i> ${servicio}</span>`
-            else if (servicioMin.includes('restaurante')) servicios += `<span class="servicios-plan"><i class="fas fa-utensils"></i> ${servicio}</span>`
-            else if (servicioMin.includes('bar')) servicios += `<span class="servicios-plan"><i class="fas fa-glass-martini-alt"></i> ${servicio}</span>`
-            else servicios += `<span class="servicios-plan">${servicio}</span>`
-        }
-    }
+    if (lugar["servicios"] != undefined)
+        for (let servicio of lugar['servicios'])
+            if (typeof servicio !== 'undefined') {
+                let servicioMin = servicio.toLowerCase()
+                if (servicioMin.includes('wifi')) servicios += `<span class="servicios-plan"><i class="fas fa-wifi"></i> ${servicio}</span>`
+                else if (servicioMin.includes('parking')) servicios += `<span class="servicios-plan"><i class="fas fa-parking"></i> ${servicio}</span>`
+                else if (servicioMin.includes('aire acondicionado')) servicios += `<span class="servicios-plan"><i class="far fa-snowflake"></i> ${servicio}</span>`
+                else if (servicioMin.includes('restaurante')) servicios += `<span class="servicios-plan"><i class="fas fa-utensils"></i> ${servicio}</span>`
+                else if (servicioMin.includes('bar')) servicios += `<span class="servicios-plan"><i class="fas fa-glass-martini-alt"></i> ${servicio}</span>`
+                else servicios += `<span class="servicios-plan">${servicio}</span>`
+            }
+    
     return servicios
 }
 
-function obtenerLinks(lugar){
+function obtenerLinks(lugar) {
     let links = ""
-    if(lugar['web']!="" && lugar['web']!=undefined) links+=`<a target="_blank" href="${lugar['web']}"><span class="links-plan"><i class="fas fa-link"></i> Visitar web</span></a>`
-    if(lugar['mail']!="" && lugar['mail']!=undefined) links += `<a target="_blank" href="mailto:${lugar['mail']}"><span class="links-plan"><i class="fas fa-envelope"></i> Enviar e-mail</span></a>`
-    if(lugar['telefono']!="" && lugar['telefono']!=undefined) links += `<span class="links-plan"><i class="fas fa-phone"></i> ${lugar['telefono']}</span>`
+    if (lugar['web'] != "" && lugar['web'] != undefined) links += `<a target="_blank" href="${lugar['web']}"><span class="links-plan"><i class="fas fa-link"></i> Visitar web</span></a>`
+    if (lugar['mail'] != "" && lugar['mail'] != undefined) links += `<a target="_blank" href="mailto:${lugar['mail']}"><span class="links-plan"><i class="fas fa-envelope"></i> Enviar e-mail</span></a>`
+    if (lugar['telefono'] != "" && lugar['telefono'] != undefined) links += `<span class="links-plan"><i class="fas fa-phone"></i> ${lugar['telefono']}</span>`
     return links
 }
 
@@ -129,7 +127,7 @@ function mostrarInfo(lugar, tipo) {
                 ${lugar['descripcion']}
                 </p>
                 </div>
-                <h4 class="oswald">Servicios</h4>
+                <h4 class="oswald">${lugar['servicios']!=undefined ? "Servicios" : ""}</h4>
                 <div class="servicios-plan">
                    ${servicios}
                 </div>

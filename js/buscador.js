@@ -26,7 +26,6 @@ function buscar(tipo) {
     let busqueda = []
     clearTimeout(timer);
     timer = setTimeout(() => {
-        let tipo = 'alojamientos'
         let query = $('#buscador').val().toLowerCase()
         for (let lugar of lugares[tipo]) {
             if (lugar['nombre'].toLowerCase().includes(query) && query != "") {

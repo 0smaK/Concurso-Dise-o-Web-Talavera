@@ -72,7 +72,7 @@ const lugares = {
     "restaurantes": [
         {
             "nombre": "Al Bosco",
-            "descripcion": "Restaurante griego en Talavera de la Reina",
+            "descripcion": "Dentro del complejo La Hacienda, famoso sobretodo por sus celebraciones de bodas, se halla el restaurante Al Bosco, un lugar elegante en un marco único. Ideal para comidas con familia y amigos podrás degustar su cocina mediterránea y creativa, con un trato profesional y exquisito de su personal. Dispone de una bonita y agradable terraza. Al Bosco os hará vivir una experiencia gastronómica que no olvidaréis.",
             "web": "",
             "mail": "",
             "direccion": "Camino de las Torres s/n, 45600 Talavera de la Reina, España",
@@ -102,7 +102,19 @@ const lugares = {
             ]
         },
         {
-
+            "nombre": "Restaurante Anticuario",
+            "descripcion": "Restaurante Anticuario, en Talavera de la Reina, dispone de 3 comedores independientes por lo que podrá celebrar en sus instalaciones cualquier tipo de acontecimientos familiares, comuniones, bautizos, cumpleaños o comidas empresariales en una ambiente íntimo y acogedor. En el Restaurante Antiquario podrán disfrutar, en un entorno cálido y acogedor, de un ambiente agradable y de una excelente y variada propuesta gastronómica, tanto en el menú diario de gran calidad como en su carta que se elabora en función de los productos de cada temporada, con las mejores recetas tanto de la cocina tradicional regional como moderna.",
+            "web": "http://www.restauranteanticuario.com/",
+            "mail": "antiquario.boreal@gmail.com",
+            "direccion": "Avda. de Madrid, 1 (junto a Hotel Ebora), 45600, Talavera de la Reina (Toledo) ",
+            "telefono": "651 688 775",
+            "maps": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3058.0702434045484!2d-4.820061185089287!3d39.96218219108301!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd401c070b67d6dd%3A0x34d01024ce11df54!2sRestaurante+Anticuario!5e0!3m2!1ses!2ses!4v1559934222217!5m2!1ses!2ses",
+            "imagenes": [
+                "./img/restaurantes/antiquario.jpg",
+                "./img/restaurantes/antiquario-1.jpg",
+                "./img/restaurantes/antiquario-2.jpg",
+                "./img/restaurantes/antiquario-3.jpg"
+            ]
         }
     ]
 }
