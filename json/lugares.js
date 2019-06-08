@@ -187,5 +187,25 @@ const lugares = {
                 "./img/restaurantes/el-coto-3.jpg"
             ]
         }
+    ],
+    "ocio": [
+        {
+
+            "nombre": "Centro Comercial Los Alfares",
+            "descripcion": "El Centro Comercial Carrefour de Los Alfares, propiedad de Carmila España y Carrefour Property, se encuentra situado en la ANTIGUA CARRETERA N-V, KM.104, en Talavera de la Reina, y dotado de múltiples accesos. La comodidad y el bienestar de nuestros clientes es fundamental. Nuestro centro está destinado a hacer que todos nuestros visitantes se sientan a gusto y que su paso por Los Alfares sea una experiencia única.",
+            "web": "https://www.losalfares.net/",
+            "mail": "gerente@losalfares.net.",
+            "direccion": "Carretera de Madrid Nacional V Km 114, Talavera de la Reina, 45600, Toledo",
+            "telefono": "925 80 10 59",
+            "maps": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2571.471409443566!2d-4.798808993026652!3d39.963482262774136!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd401eb33700e0c5%3A0xbcf1e502b626101d!2sCentro+Comercial+Los+Alfares!5e0!3m2!1ses!2ses!4v1560017296600!5m2!1ses!2ses",
+            "imagenes": [
+                "./img/ocio/alfares.jpg",
+                "./img/ocio/alfares-1.jpg",
+                "./img/ocio/alfares-2.jpg",
+                "./img/ocio/alfares-3.jpg",
+                "./img/ocio/alfares-4.jpg"
+            ]
+
+        }
     ]
 }

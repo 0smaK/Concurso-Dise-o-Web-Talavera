@@ -44,7 +44,7 @@ a.no-link{
 }
 
 img.logo{
-    height: 95%;
+    max-height: 49px;
 }
 
 nav.navbar{

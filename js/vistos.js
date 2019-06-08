@@ -41,8 +41,10 @@ function verHistorial(tipo) {
     $('.vistos .no-vistos').addClass('d-none')
     $('.vistos .row').html('')
     let vistos = getVistos()
-    if (vistos == null || vistos == undefined || vistos == [])
+    if (vistos == null || vistos == undefined || vistos == []){
+        vistos = []
         historialVacio()
+    }
     else
         for (let visto of vistos.reverse())
             for (let lugar of lugares[tipo])
@@ -64,7 +66,7 @@ function verHistorial(tipo) {
 
 function historialVacio() {
     let vistos = getVistos()
-    if (vistos == null || vistos == undefined) {
+    if (vistos == null || vistos == undefined || vistos == []) {
         $('.vistos .no-vistos').removeClass('d-none')
         $('.vistos .vistos-true').addClass('d-none')
     }

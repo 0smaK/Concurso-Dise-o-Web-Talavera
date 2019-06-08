@@ -42,7 +42,7 @@
 
     <script>
         setTimeout(() => {
-            mostrarLugares('alojamientos')
+            mostrarLugares('ocio')
         }, 250)
     </script>
 
@@ -51,7 +51,7 @@
     <link rel="stylesheet" href="./css/menu-lateral.css">
     <link rel="stylesheet" href="./css/planes.css">
 
-    <title>Talavera de la Reina</title>
+    <title>¿Dónde comer? | Turismo Talavera</title>
 </head>
 
 <body>
@@ -97,16 +97,13 @@
     <div id="carousel" class="carousel c-alt slide" data-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item  active">
-                <img src="./img/alojamientos/bluewindowshouse.jpg" class="d-block w-100" alt="...">
+                <img src="./img/restaurantes/bowling.jpg" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item">
-                <img src="./img/alojamientos/besmart.jpg" class="d-block w-100" alt="...">
+                <img src="./img/ocio/alfares.jpg" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item">
-                <img src="./img/alojamientos/perales.jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-                <img src="./img/alojamientos/habitaciones-doble-ebora.jpg" class="d-block w-100" alt="...">
+                <img src="./img/ocio/fakultad.jpg" class="d-block w-100" alt="...">
             </div>
         </div>
         <a class="carousel-control-prev" role="button" href="#carousel" data-slide="prev" style="z-index: 2010;">
@@ -125,34 +122,33 @@
     <div class="buscador">
         <i class="material-icons buscar">search</i>
         <i class="material-icons limpiar d-none" onclick="limpiarBusqueda()">close</i>
-        <input onkeyup="mostrarBotonLimpiar();buscar('alojamientos')" id="buscador" class="buscador" type="text"
-            placeholder="Busca un hotel...">
+        <input onkeyup="mostrarBotonLimpiar();buscar('ocio')" id="buscador" class="buscador" type="text"
+            placeholder="Busca algo">
     </div>
     <div class="alojamientos-card">
         <div class="container">
             <div class="row">
                 <div class="col-12 montserrat text-center">
-                    <h2 style="display:inline-block;">¡Encuentra alojamiento de manera instantanea!</h2>
+                    <h2 style="display:inline-block;">¿Estás aburrido? ¡Encuentra plan en un instante!</h2>
                 </div>
             </div>
         </div>
     </div>
     <div class="container movil">
-        <h2 class="montserrat" style="display:inline-block;">¡Encuentra alojamiento de manera instantanea!</h2>
+        <h2 class="montserrat" style="display:inline-block;">¿Estás aburrido? ¡Encuentra plan en un instante!</h2>
     </div>
     <div class="container" style="z-index: 2000">
         <div class="row">
             <div class="col-12 text-center">
                 <div class="filtros">
                     <span class="filtros t-filtros"><i class="fas fa-filter"></i> Filtros</span>
-                    <span id="todos" class="filtros f-filtros active" onclick="setFiltro('todos','alojamientos')"><i
-                            class="fas fa-globe-europe"></i> Todos los
-                        alojamientos</span>
-                    <span id="favs" class="filtros f-filtros" onclick="setFiltro('favs','alojamientos')"><i
+                    <span id="todos" class="filtros f-filtros active" onclick="setFiltro('todos','ocio')"><i
+                            class="fas fa-globe-europe"></i> Todos los bares y ocio</span>
+                    <span id="favs" class="filtros f-filtros" onclick="setFiltro('favs','ocio')"><i
                             class="fas fa-heart"></i>
                         Marcados como me
                         gusta</span>
-                    <span id="vistos" class="filtros f-filtros" onclick="setFiltro('vistos','alojamientos')"><i
+                    <span id="vistos" class="filtros f-filtros" onclick="setFiltro('vistos','ocio')"><i
                             class="fas fa-eye"></i>
                         Vistos recientemente</span>
                 </div>
@@ -162,7 +158,7 @@
     <div class="container" style="z-index: 2000">
         <div class="row">
             <div class="todos">
-                <h3 class="oswald">Todos los alojamientos</h3>
+                <h3 class="oswald">Todos los lugares de ocio</h3>
                 <div class="row">
                 </div>
             </div>
@@ -174,7 +170,7 @@
                 <h3 class="oswald">Marcados como me gusta</h3>
                 <div class="no-likes text-center">
                     <i class="fas fa-heart-broken"></i>
-                    <span>Ups! Parece que no tienes ningún alojamiento marcado como favorito</span>
+                    <span>Ups! Parece que no tienes ningún restaurante marcado como favorito</span>
                 </div>
                 <div class="con-likes text-center">
                     <div class="row">
@@ -187,10 +183,10 @@
     <div class="container" style="z-index: 2000">
         <div class="row">
             <div class="vistos d-none">
-                <h3 class="oswald">Ultimos alojamientos vistos</h3>
+                <h3 class="oswald">Ultimos lugares de ocio vistos</h3>
                 <div class="no-vistos text-center">
                     <i class="fas fa-eye-slash"></i>
-                    <span>Ups! Tu historial de alojamientos vistos está vacio</span>
+                    <span>Ups! Tu historial de lugares de ocio vistos está vacio</span>
                 </div>
                 <div class="vistos-true text-center">
                     <div class="text-left borrar-historial">

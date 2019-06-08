@@ -127,7 +127,7 @@ function mostrarInfo(lugar, tipo) {
                 ${lugar['descripcion']}
                 </p>
                 </div>
-                <h4 class="oswald">${lugar['servicios']!=undefined ? "Servicios" : ""}</h4>
+                <h4 class="oswald">${lugar['servicios'] != undefined ? "Servicios" : ""}</h4>
                 <div class="servicios-plan">
                    ${servicios}
                 </div>
