@@ -1,6 +1,5 @@
 const lugares = {
-    "alojamientos": [
-        {
+    "alojamientos": [{
             "nombre": "Hotel Ebora",
             "descripcion": "El Hotel Ébora se encuentra en Talavera de la Reina, junto a la basílica de Nuestra Señora del Prado. Constituye un lugar de interés por sí mismo y dispone de habitaciones con conexión Wi-Fi gratuita. Las habitaciones son elegantes y cuentan con aire acondicionado y TV. Además, los niños menores de 12 años podrán alojarse de forma gratuita en las camas disponibles. El hotel dispone de recepción 24 horas y alberga el restaurante Antiquario, que ofrece cocina de calidad y especialidades locales. La cafetería El Sol ofrece desayunos, tapas y cenas ligeras, así como bebidas durante todo el día. El hotel ofrece un servicio de alquiler de coches y dispone de aparcamiento. Madrid está a unos 70 minutos en coche, mientras que Toledo se encuentra a unos 45 minutos también en coche. Talavera es muy famosa por su cerámica. Durante los meses de julio y agosto, el registro gratuito de salida después de lo habitual estará disponible hasta las 14.00.",
             "web": "https://www.hotelebora.com/",
@@ -69,8 +68,7 @@ const lugares = {
             ]
         }
     ],
-    "restaurantes": [
-        {
+    "restaurantes": [{
             "nombre": "Al Bosco",
             "descripcion": "Dentro del complejo La Hacienda, famoso sobretodo por sus celebraciones de bodas, se halla el restaurante Al Bosco, un lugar elegante en un marco único. Ideal para comidas con familia y amigos podrás degustar su cocina mediterránea y creativa, con un trato profesional y exquisito de su personal. Dispone de una bonita y agradable terraza. Al Bosco os hará vivir una experiencia gastronómica que no olvidaréis.",
             "web": "",
@@ -133,7 +131,7 @@ const lugares = {
             ]
         },
         {
-            "nombre": "Bowling Center",
+            "nombre": "Bowling Center (Restaurante)",
             "descripcion": "Bowling Center es el buque insignia de Complejo Estoril. Más de 1800 ms cuadrados de instalaciones modernas y adaptadas, que cuenta entre sus principales características con una bolera profesional dotada con diez pistas de última tecnología, una cocina capaz de dar servicio a más de cuatrocientos comensales, una zona infantil con piscinas de bolas, máquinas recreativas, talleres de dibujo y pintura, personal especializado en cuidados infantiles, más de ocho pantallas de plasma y dos pantallas gigantes de 250 pulgadas en las que se pueden visionar todos los eventos deportivos relevantes y vídeos musicales. Todo atendido por una plantilla joven y servicial de más de veinticinco personas que dan un trato personalizado y profesional a nuestra clientela.",
             "web": "http://complejoestoril.com/bowlingcenter/",
             "mail": "publicidad@ComplejoEstoril.com ",
@@ -188,9 +186,7 @@ const lugares = {
             ]
         }
     ],
-    "ocio": [
-        {
-
+    "ocio": [{
             "nombre": "Centro Comercial Los Alfares",
             "descripcion": "El Centro Comercial Carrefour de Los Alfares, propiedad de Carmila España y Carrefour Property, se encuentra situado en la ANTIGUA CARRETERA N-V, KM.104, en Talavera de la Reina, y dotado de múltiples accesos. La comodidad y el bienestar de nuestros clientes es fundamental. Nuestro centro está destinado a hacer que todos nuestros visitantes se sientan a gusto y que su paso por Los Alfares sea una experiencia única.",
             "web": "https://www.losalfares.net/",
@@ -206,6 +202,92 @@ const lugares = {
                 "./img/ocio/alfares-4.jpg"
             ]
 
+        },
+        {
+            "nombre": "Bowling Center",
+            "descripcion": "Bowling Center es el buque insignia de Complejo Estoril. Más de 1800 ms cuadrados de instalaciones modernas y adaptadas, que cuenta entre sus principales características con una bolera profesional dotada con diez pistas de última tecnología, una cocina capaz de dar servicio a más de cuatrocientos comensales, una zona infantil con piscinas de bolas, máquinas recreativas, talleres de dibujo y pintura, personal especializado en cuidados infantiles, más de ocho pantallas de plasma y dos pantallas gigantes de 250 pulgadas en las que se pueden visionar todos los eventos deportivos relevantes y vídeos musicales. Todo atendido por una plantilla joven y servicial de más de veinticinco personas que dan un trato personalizado y profesional a nuestra clientela.",
+            "web": "http://complejoestoril.com/bowlingcenter/",
+            "mail": "publicidad@ComplejoEstoril.com ",
+            "direccion": "Avda. Madrid, s/n (Comp.Estoril), Talavera de la Reina",
+            "telefono": "925 82 25 91",
+            "maps": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3058.0120143654517!2d-4.812678685089244!3d39.963484091004595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd401eaad5f8239f%3A0xdc5f5412e531d233!2sBowling+Center!5e0!3m2!1ses!2ses!4v1559935725079!5m2!1ses!2ses",
+            "imagenes": [
+                "./img/restaurantes/bowling.jpg",
+                "./img/ocio/bowling.jpg",
+                "./img/ocio/bowing-1.jpg",
+                "./img/restaurantes/bowling-1.jpg",
+            ]
+        },
+        {
+            "nombre": "Escape Room Talavera",
+            "descripcion": "Tenemos a vuestra disposición varias Escape Room para que tú y tus amigos, compañeros o familiares desarrolléis vuestro ingenio resolviendo los enigmas que encontraréis para lograr escapar. ¿Os atrevéis a intentarlo?.",
+            "web": "http://escaperoomtalavera.com",
+            "mail": "escaperoomtalavera@gmail.com",
+            "direccion": "Camino Segurilla, 58, 46500, Talavera de la Reina",
+            "telefono": "925 80 16 45",
+            "maps": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3057.861754391212!2d-4.837871949109636!3d39.96684347931897!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd401b8be834d4fb%3A0x2a051db9ecff511a!2sEscape+Room+Talavera!5e0!3m2!1ses!2ses!4v1560181384103!5m2!1ses!2ses",
+            "imagenes": [
+                "./img/ocio/escape-room-talavera.jpg",
+                "./img/ocio/escape-room-talavera-1.jpg",
+                "./img/ocio/escape-room-talavera-2.jpeg"
+            ]
+        },
+        {
+            "nombre": "La Fakultad",
+            "descripcion": "Expertos en supertapas.\nUna de sus señas de identidad es el trato respetuoso y cordial del que hace gala su personal, pero si de algo presume La Fakultad además de ofrecer la mayor variedad de cervezas a sus clientes, es del tamaño y calidad de los pinchos que acompañan a las consumiciones, donde además, para los amantes del buen comer La Fakultad guarda un as en cada una de sus mesas, “su oferta gastronómica de primera” adaptada al precio justo de hoy día, una carta en la que las sartenadas, las tostas, las raciones o ensaladas preparadas en el acto conquistan con sólo ver su nombre.",
+            "web": "https://lafakultad.es/",
+            "mail": "lafakultad@me.com",
+            "direccion": "Calle Murillo, 4, 46500, Talavera de la Reina",
+            "telefono": "925 82 57 62",
+            "maps": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1529.006235170015!2d-4.815629283522378!3d39.96347389634413!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd401c00a71fb9d7%3A0x2003b5f9b93007d4!2sLa+Fakultad!5e0!3m2!1ses!2ses!4v1560182243712!5m2!1ses!2se",
+            "imagenes": [
+                "./img/ocio/fakultad.jpg",
+                "./img/ocio/la-fakultad.png",
+                "./img/ocio/la-fakultad-1.jpg",
+                "./img/ocio/la-fakultad-2.jpg"
+            ]
+        },
+        {
+            "nombre": "Diverxa",
+            "descripcion": "En apenas 5 años, el Mundo Diverxa se ha convertido en un referente del sector debido a la frescura, originalidad y rebeldía que caracteriza a nuestras marcas. Como resultado, los clientes cada vez que eligen una opción de nuestro Mundo, viven una experiencia diferente, dinámica, estimulante, optimista y divertida, valores que llevamos inscritos en nuestro ADN.",
+            "web": "https://mundodiverxa.com",
+            "mail": "reservas@mundodiverxa.com",
+            "direccion": "Av. Francisco Aguirre, 199, 45600, Talavera de la Reina",
+            "telefono": "925 052 593",
+            "maps": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3057.7849875001857!2d-4.830628449230677!3d39.968559679318695!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd401bf384e466e7%3A0xc766a53a3a810760!2sDiverxa+90!5e0!3m2!1ses!2ses!4v1560183763258!5m2!1ses!2ses",
+            "imagenes": [
+                "./img/ocio/diverxa-2.jpg",
+                "./img/ocio/diverxa-1.jpg",
+                "./img/ocio/diverxa-3.jpg"
+            ]
+        },
+        {
+            "nombre": "Cine Artesiete Los Alfares",
+            "descripcion": "Cine situado en el Centro Comercial Los Alfares, dispone de salas con la ultima tecnología para disfrutar de los ultimos estrenos con la mejor calidad de video y de sonido.",
+            "web": "https://www.artesiete.es/principal/index/0/068/Artesiete%20Alfares",
+            "mail": "alfares@artesiete.es",
+            "direccion": "Carretera de Madrid Nacional V Km 114, Talavera de la Reina, 45600, Toledo",
+            "telefono": "925 80 71 78",
+            "maps": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3058.039848200672!2d-4.801512249230866!3d39.962861779319475!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd401eb34372e525%3A0xa5cc1c93f05405f7!2sCines+Artesiete+Los+Alfares!5e0!3m2!1ses!2ses!4v1560184859286!5m2!1ses!2ses",
+            "imagenes": [
+                "./img/ocio/artesiete.jpg",
+                "./img/ocio/artesiete-1.jpg",
+                "./img/ocio/artesiete-2.jpeg"
+            ]
+        },
+        {
+            "nombre": "",
+            "descripcion": "",
+            "web": "",
+            "mail": "",
+            "direccion": "",
+            "telefono": "",
+            "maps": "",
+            "imagenes": [
+                "",
+                "",
+                ""
+            ]
         }
     ]
 }
