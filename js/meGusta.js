@@ -11,7 +11,7 @@ $(document).ready(() => {
 })
 
 function getMeGusta() {
-    return JSON.parse(localStorage.getItem("lugaresFAV"))
+    return JSON.parse(localStorage.getItem("lugaresFAV")) == null ? [] : JSON.parse(localStorage.getItem("lugaresFAV"))  
 }
 
 function setMeGusta(lugaresFAV) {
@@ -44,7 +44,7 @@ function meGusta(nombre, tipo, fuera) {
         $(`span#${nombre.replace(/[\W_]/g, "-")}`).removeClass('active')
         lugaresFAV = getMeGusta()
         if (lugaresFAV == null) lugaresFAV = []
-        if (lugaresFAV.length > 0) {
+        if (existenMeGustas(tipo)) {
             if (lugaresFav.filter(fav => { return fav.nombre === nombre})) {
                 lugaresFAV.splice(lugaresFAV.findIndex(fav => fav.nombre === nombre), 1)
                 localStorage.removeItem("lugaresFAV")
@@ -52,7 +52,6 @@ function meGusta(nombre, tipo, fuera) {
             }
         }
     }
-    mostrarMeGustas(tipo)
 }
 
 function mostrarMeGustas(tipo) {
@@ -60,7 +59,7 @@ function mostrarMeGustas(tipo) {
     $('.favs .no-likes').addClass('d-none')
     let favs = getMeGusta()
     if (favs == null) favs = []
-    if (favs.length < 1) mostrarNoTienesMeGusta()
+    if (!existenMeGustas(tipo)) mostrarNoTienesMeGusta()
     $('.favs .row').html('')
     for (let fav of favs.reverse()) {
         for (let lugar of lugares[tipo]) {
@@ -101,4 +100,13 @@ function cambiarCorazones() {
     for (let fav of favs) {
         $(`span#${fav.nombre.replace(/[\W_]/g, "-")}.me-gusta-round > i`).removeClass('far').addClass('fa')
     }
+}
+
+function existenMeGustas(tipo){
+    let favs = getMeGusta()
+    let existe = false;
+    if(favs == null || favs == undefined) favs = []
+    if(favs.filter(fav => {return fav.tipo === tipo})) existe = true
+    console.log(existe)
+    return existe
 }
