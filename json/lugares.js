@@ -276,17 +276,32 @@ const lugares = {
             ]
         },
         {
-            "nombre": "",
-            "descripcion": "",
-            "web": "",
+            "nombre": "Teatro Palenque",
+            "descripcion": "Situado en la antigua iglesia de los Jesuitas, conserva todos sus muros perimetrales y parte de su acceso por el muro del este. Por su importancia histórica debemos destacar la arquitectura, en la que el ladrillo y el granito se fundían para formar sus muros laterales, así como su gran cúpula ya desaparecida, que presidía el interior. En la actualidad se alza este moderno teatro, que anteriormente fue cine",
+            "web": "http://cultura.talavera.es/content/teatro-palenque",
             "mail": "",
-            "direccion": "",
-            "telefono": "",
-            "maps": "",
+            "direccion": "Calle Palenque, s/n, 45600 Talavera de la Reina, Toledo",
+            "telefono": "925 82 01 26",
+            "maps": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12232.282840519805!2d-4.830417506616865!3d39.96217175577309!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x1ded93cffc79bb27!2sTeatro+Palenque!5e0!3m2!1ses!2ses!4v1560454747087!5m2!1ses!2ses",
             "imagenes": [
-                "",
-                "",
-                ""
+                "./img/ocio/palenque.png",
+                "./img/ocio/palenque-0.png",
+                "./img/ocio/palenque-1.png",
+                "./img/ocio/palenque-2.png"
+            ]
+        },
+        {
+            "nombre": "Teatro Victoria",
+            "descripcion": "El teatro Victoria de Talavera de la Reina (Toledo) se levantó sobre el solar del antiguo corral de comedias del siglo XVII que fue derribado en 1892.</br>En su terreno se construyó este teatro en 1912, que más tarde pasaría a denominarse Teatro Mariana, en honor al historiador talaverano padre Juan de Mariana.</br>Destaca en su fachada la cerámica, obra de Juan Ruiz de Luna, con alegorías de la música y el teatro, retratos de dramaturgos y músicos, y nombres de zarzuelas.</br>La fachada de tres alturas y composición simétrica es una minuciosa combinación de arquitectura modernista, en la que destacan los balcones metálicos historiados, los apliques de hierro y la azulejería.</br>Su interior presenta una decoración de escayola, con las balaustradas de cerrajería y los pilares metálicos. Fue de nuevo adquirido por el ayuntamiento y restaurado en 1990.",
+            "web": "http://cultura.talavera.es/content/teatro-victoria",
+            "mail": "",
+            "direccion": "Calle del Teatro, 7, 45600 Talavera de la Reina, Toledo",
+            "telefono": "",
+            "maps": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1818.4189046076901!2d-4.8313864257676595!3d39.959194251406615!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xe6876aa9fb182cab!2sTeatro+Victoria!5e0!3m2!1ses!2ses!4v1560455242021!5m2!1ses!2ses",
+            "imagenes": [
+                "./img/ocio/victoria-1.jpg",
+                "./img/ocio/victoria-0.jpg",
+                "./img/ocio/victoria.png"
             ]
         }
     ]

@@ -576,3 +576,67 @@ img.chatbot-img-perfil{
         font-size: 1rem;
     }
 }
+
+/* FOOTER */
+
+li.footer-el{
+    cursor: pointer;
+    color: rgb(228, 228, 228);
+    list-style-type: none;
+    padding-top:5px;
+    transition: color .0625s ease-in-out;
+}
+
+li.footer-el:hover{
+    color: white;
+}
+
+.footer{
+    color: white;
+    background-color: #006bdd;
+    padding:50px;
+    border-top-left-radius: 60% 20%;
+    border-top-right-radius: 60% 20%;
+    border-top: 1px solid rgba(0, 0, 0, 0.25);
+    box-shadow: inset 0 14px 28px -10px rgba(0, 0, 0, 0.116);
+}
+
+.subfooter{
+    background-color: #004ea1;
+    color: white;
+    height: 40px;
+    padding-top: 8px;
+}
+
+.container-fluid .marca{
+    color: white;
+    border-bottom: 1px dashed white;
+    cursor: pointer;
+    transition: all .125s;
+}
+
+.container-fluid .marca:hover{
+    text-decoration: none;
+    border-bottom: 1px dashed #FFEB3B;
+    color: #FFEB3B;
+}
+
+.container-fluid .marca i{
+    display: none;
+    animation: github-logo .125s;
+    transform: translateY(30px);
+}
+
+.container-fluid .marca:hover i{
+    transform: translateY(0);
+    display: inline-block;
+}
+
+@keyframes github-logo{
+    from{
+        transform: translateY(30px);
+    }
+    to{
+        transform: translateY(0);
+    }
+}
