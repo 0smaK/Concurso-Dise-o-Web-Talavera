@@ -1,0 +1,153 @@
+input.buscador{
+    position: absolute;
+    top: 84px;
+    left:1.5%;
+    z-index: 2001;
+    width: 30.25%;
+    padding:10px;
+    background-color:white;
+    border: 1px solid white;
+    border-radius: 50px;
+    color: black;
+    padding-left:45px;
+    padding-right: 60px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.095), 0 6px 6px rgba(0,0,0,0.13);
+}
+
+.buscador .buscar{
+    position: absolute;
+    top:96px;
+    left:2.5%;
+    z-index: 2002;
+    color: #007bff;
+    cursor: pointer;
+}
+
+.buscador .limpiar{
+    position: absolute;
+    top:96px;
+    right:70%;
+    z-index:2002;
+    color:gray;
+    cursor: pointer;
+}
+
+.cover-imagen{
+    position: absolute;
+    color: white;
+    bottom: 0;
+    width: 100%;
+    text-align: right;
+    background: linear-gradient(0deg, rgba(0,0,0,.75) 0%, rgba(0,0,0,.5) 50%, rgba(0,0,0,0) 100%); 
+    height: 50px;
+}
+
+.cover-imagen p{
+    padding: 15px;
+}
+
+.cover-imagen p:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.cover-imagen p i{
+    padding-right: 2.5px;
+}
+
+.cover-imagen p:hover i{
+    text-decoration: underline;
+}
+
+.info-lugar{
+    width: 100%;
+}
+
+.mostrar-mas{
+    position: absolute;
+    height: 80px;
+    width: 80%;
+    background-color: white; 
+    bottom: 0;
+    left: 10%;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    box-shadow: -1px -1px 19px 0px rgba(0, 0, 0, 0.212), -1px -1px 25px 0px rgba(0, 0, 0, 0.315);
+    transition: box-shadow .25s;
+    display: table;
+    border: 1px solid rgba(0, 0, 0, 0.123);
+}
+
+.mostrar-mas h2{
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.mostrar-mas h2 i{
+    margin-left: 50px;
+    color:black;
+    font-size: 24px;
+}
+
+.mostrar-mas:hover{
+    box-shadow: -1px -1px 19px 0px rgba(0, 0, 0, 0.322), -1px -1px 25px 0px rgba(0, 0, 0, 0.466);
+    animation: hover-mostrar-mas .5s;
+    cursor: pointer;
+}
+
+.mostrar-mas.full{
+    animation: abrir-mostrar-mas .375s;
+    height: 100%;
+    width: 100%;
+    left:0;
+    box-shadow:0;
+    border-radius: 0;
+    border: 0;
+}
+
+.mostrar-mas.full h2{
+    display: block;
+    margin-top:25px;
+}
+
+.mostrar-mas.full h2 i{
+    display: none;
+}
+
+@keyframes hover-mostrar-mas{
+    0%{
+        height: 80px;
+        width: 80%;
+        left: 10%;
+    }
+    50%{
+        height: 100px;
+        width: 81.5%;
+        left: 9.25%;
+    }
+    100%{
+        height: 80px;
+        width: 80%;
+        left: 10%;
+    }
+}
+
+@keyframes abrir-mostrar-mas{
+    from {
+        height: 80px;
+        width: 80%;
+        left: 10%;
+        border-top-left-radius: 50px;
+        border-top-right-radius: 50px;
+        box-shadow: -1px -1px 19px 0px rgba(0, 0, 0, 0.212), -1px -1px 25px 0px rgba(0, 0, 0, 0.315);
+    }
+    to {
+        height: 100%;
+        width: 100%;
+        left:0;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        border: 0;
+        box-shadow: 0;
+    }
+}

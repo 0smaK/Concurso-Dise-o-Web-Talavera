@@ -14,7 +14,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <!-- Fuentes de Google -->
-    <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto|Lobster" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto|Lobster|Oswald:400,500" rel="stylesheet">
 
     <!-- linkeamos el CSS de bootstrap desde su CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -34,16 +34,35 @@
     <script src="./js/index.js"></script>
     <script src="./js/chatbot.js"></script>
     <script src="./js/menu-lateral.js"></script>
+    <script src="./js/buscador.js"></script>
+    <script src="./js/planes.js"></script>
+    <script src="./json/lugares.js"></script>
+    <script src="./js/meGusta.js"></script>
+    <script src="./js/vistos.js"></script>
+
+    <script>
+        setTimeout(() => {
+            mostrarLugares('alojamientos')
+        }, 250)
+    </script>
 
     <!-- link de estilos css propios -->
     <link rel="stylesheet" href="./css/estilos.css">
     <link rel="stylesheet" href="./css/menu-lateral.css">
+    <link rel="stylesheet" href="./css/que-ver.css">
+    <style>
+        body {
+            overflow: hidden;
+        }
+    </style>
+
     <title>Talavera de la Reina</title>
 </head>
 
-<body>
+<body style="margin: 0">
     <div class="menu-lateral hide-menu">
-        <i id="cerrar-menu" class="material-icons" onclick="mostrarMenuLateral()">close</i>
+        <i id="cerrar-menu" class="material-icons"
+            onclick="mostrarMenuLateral(); setTimeout(() => $('body').css('overflow','hidden'), 500)">close</i>
         <div class="submenu float-left">
             <div class="submenu-item">Qué ver</div>
             <div class="submenu-item">Alojamiento</div>
@@ -71,7 +90,8 @@
             </div>
         </div>
     </div>
-    <div class="menu-lateral-out hide-menu" onclick="mostrarMenuLateral()"></div>
+    <div class="menu-lateral-out hide-menu"
+        onclick="mostrarMenuLateral(); setTimeout(() => $('body').css('overflow','hidden'), 500)"></div>
     <!-- navbar en pc -->
     <nav class="navbar navbar-expand navbar-light bg-blanco d-flex justify-content-between sticky-top">
         <i class="material-icons menu-navbar" onclick="mostrarMenuLateral()">menu</i>
@@ -83,138 +103,38 @@
         </div>
     </nav>
 
-    <div class="contenido-carousel montserrat">
-        <div class="contenido-carousel-child">
-            <h1 class="titulo">VISITA TALAVERA DE LA REINA</h1>
-            <h3 class="subtitulo c-amarillo">LA CIUDAD DE LA CERÁMICA</h3>
-            <button class="btn btn-outline-light btn-visitar-talavera" type="button">Conócela</button>
-        </div>
-    </div>
-    <div id="carousel" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-            <div class="capa-azul-carousel">
-
-                <div class="carousel-item carousel-blue active">
-                    <img src="./img/basilica.jpg" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item carousel-blue">
-                    <img src="./img/bg.jpg" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item carousel-blue">
-                    <img src="./img/puente_hierro.png" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item carousel-blue">
-                    <img src="./img/murallas.jpg" class="d-block w-100" alt="...">
-                </div>
-            </div>
-        </div>
-        <a class="carousel-control-prev" role="button" href="#carousel" data-slide="prev" style="z-index: 1000;">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous </span>
-        </a>
-        <a class="carousel-control-next" role="button" href="#carousel" data-slide="next" style="z-index: 1000;">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
+    <div class="buscador">
+        <i class="material-icons buscar">search</i>
+        <i class="material-icons limpiar d-none" onclick="limpiarBusqueda()">close</i>
+        <input onkeyup="mostrarBotonLimpiar();buscar('ocio')" id="buscador" class="buscador" type="text"
+            placeholder="Busca algo">
     </div>
 
-    <div class="container planea-viaje">
+    <div class="container-fluid">
         <div class="row">
-            <div class="col-12">
-                <h3 class="text-center montserrat">
-                    Planea un viaje perfecto a Talavera de la Reina
-                </h3>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12 col-md-6 col-lg-4">
-                <a href="./alojamientos.html" class="no-link">
-                    <div class="card-planea-viaje hotel-bg">
-                        <div>
-                            <i class="material-icons icon-planes">
-                                hotel
-                            </i>
-                            <h4 class="montserrat">Alojamiento</h4>
-                        </div>
+            <div class="col-12 col-lg-4" style="margin:0;padding:0;">
+                <div class="imagen-lugar" style="position:relative;background:url(./img/turismo/basilica.jpg);margin:0;max-height: 225px;width: 100%; background-size: cover; height: 225px;   background-position: center; ">                 
+                    <div class="cover-imagen">
+                            <p class="oswal"><i class="fas fa-camera"></i> Más fotos</p>
                     </div>
-                </a>
+                </div>
+                <div class="info-lugar">
+                    <h3 class="oswald text-center" style="padding: 15px;">Basilica Nuestra Señora del Prado</h3>
+                    <p  style="padding:0 20px;">Da cobijo a la que es hoy patrona de la ciudad, Nuestra Señora del Prado. La que fue denominada Reina de las Ermitas por Felipe II, es también llamada la Capilla Sixtina de la cerámica, pues este vistoso arte muestra aquí todo su esplendor desde el XVI a nuestros días.
+
+                            El estilo de su construcción es una combinación de Renacimiento y Barroco, aunque ha sufrido diversas restauraciones a lo largo de los siglos. Fue elevada a la dignidad de Basílica en 1989 por el Papa Juan Pablo II.+ ver más información</p>
+                </div>
             </div>
-            <div class="col-12 col-md-6 col-lg-4">
-                <a href="./restaurantes.html" class="no-link">
-                    <div class="card-planea-viaje restaurante-bg">
-                        <div>
-                            <i class="material-icons icon-planes">
-                                restaurant
-                            </i>
-                            <h4 class="montserrat">¿Dónde comer?</h4>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4">
-                <a class="no-link" href="./ocio.html">
-                    <div class="card-planea-viaje cine-bg">
-                        <div>
-                            <i class="material-icons icon-planes">
-                                theaters
-                            </i>
-                            <h4 class="montserrat">Ocio</h4>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-12 col-lg-3 d-none d-lg-block"></div>
-            <div class="col-12 col-md-6 col-lg-6">
-                <a class="no-link" href="./que-ver.html">
-                    <div class="card-planea-viaje quever-bg">
-                        <div>
-                            <i class="fas fa-map-marker-alt icon-planes"></i>
-                            <h4 class="montserrat">¿Qué ver?</h4>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-12 col-lg-3 d-none d-lg-block"></div>
-        </div>
-    </div>
-    <div class="container-fluid mt-4 footer">
-        <div class="row text-center pt-4">
-            <div class="col-12 col-sm-6 col-md-4">
-                <ul class="footer-el el-izquierda">
-                    <h4>Navega por la página</h4>
-                    <li class="footer-el">Alojamiento</li>
-                    <li class="footer-el">Dónde comer</li>
-                    <li class="footer-el">Lugares de ocio y bares</li>
-                    <li class="footer-el">Qué ver</li>
-                </ul>
-            </div>
-            <div class="col-12 col-sm-6 col-md-4">
-                <ul class="footer-el el-centro">
-                    <h4>Acerca de</h4>
-                    <li class="footer-el">Acerca de la web</li>
-                    <li class="footer-el">Técnologías de la web</li>
-                    <li class="footer-el">Diseño de la web</li>
-                    <li class="footer-el">Chatbot</li>
-                    <li class="footer-el">Uso de datos</li>
-                </ul>
-            </div>
-            <div class="col-12 col-sm-6 col-md-4">
-                <ul class="footer-el el-derecha">
-                    <h4>Terminos legales</h4>
-                    <li class="footer-el">Política de cookies</li>
-                    <li class="footer-el">Términos y condiciones</li>
-                </ul>
+            <div class="col-12 col-lg-8" style="height:calc(100vh - 64px); margin:0; padding: 0;position: relative;">
+                <div class="mostrar-mas text-center" onclick="$(this).addClass('full')"><h2 class="montserrat">Explorar otros lugares <i class="fas fa-chevron-up"></i></h2></div>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3058.1085058085523!2d-4.822905385089315!3d39.96132669113445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd401c07d712ab01%3A0x4d926b96c1914f6c!2sBas%C3%ADlica+de+Nuestra+Se%C3%B1ora+del+Prado!5e0!3m2!1ses!2ses!4v1560733866162!5m2!1ses!2ses"
+                    width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
             </div>
         </div>
     </div>
-    <div class="container-fluid subfooter">
-        <div class="row text-center">
-            <div class="col-12">
-                Turismo Talavera por <a href="https://github.com/0smak" target="_blank" class="marca">Óscar Muñoz Cano
-                    <i class="fab fa-github"></i></a>
-            </div>
-        </div>
-    </div>
+
+
     <div id="chatbot" class="chatbot hide-chatbot">
         <audio id="notificacion">
             <source src="./sounds/notificacion.mp3" type="audio/mpeg">
@@ -263,6 +183,7 @@
             </i>
         </button>
     </div>
+
 </body>
 
 </html>
