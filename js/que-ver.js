@@ -36,13 +36,14 @@ function mostrarLugar(nombre) {
     let lugarSel = ''
     for (let lugar of lugares['que-ver'])
         if (nombre == lugar['nombre']) lugarSel = lugar
+    let imagenes = obtenerImagenesQV(lugarSel)
     $('#lugar-que-ver').html('')
     let html = `
     <div class="row">
             <div class="col-12 col-lg-4" style="margin:0;padding:0;">
                 <div class="imagen-lugar" style="background:url(${lugarSel['imagenes'][0]});background-size: cover;background-position: center;">                 
                     <div class="cover-imagen">
-                            <p class="oswal"><i class="fas fa-camera"></i> Más fotos</p>
+                            <p class="oswal" onclick="mostrarImgs()"><i class="fas fa-camera"></i> Más fotos</p>
                     </div>
                 </div>
                 <div class="info-lugar">
@@ -51,6 +52,9 @@ function mostrarLugar(nombre) {
                 </div>
                 <div class="busqueda d-none">
                     <div class="row"></div>
+                </div>
+                <div class="fotos d-none">
+                     ${imagenes}
                 </div>
             </div>
             <div class="col-12 col-lg-8" style="height:calc(100vh - 64px); margin:0; padding: 0;position: relative;">
@@ -145,4 +149,32 @@ function limpiarBusquedaQV() {
     $('.info-lugar').removeClass('d-none')
     agitar(0)
     mostrarBotonLimpiarQV()
+}
+
+function seleccionarImg(img) {
+    $('.img-principal').attr('src', img)
+}
+
+function obtenerImagenesQV(lugar) {
+    let imagenes = ""
+    for (let imagen of lugar['imagenes']) {
+        if (typeof imagen !== 'undefined') {
+            imagenes += `<img src="${imagen}" alt="foto de ${lugar["nombre"]}" onclick="seleccionarImg('${imagen}')">`
+        }
+    }
+    return imagenes
+}
+
+function mostrarImgs() {
+    if ($('.cover-imagen p i').hasClass('fa-times')) {
+        $('.busqueda').addClass('d-none')
+        $('.info-lugar').removeClass('d-none')
+        $('.fotos').addClass('d-none')
+        $('.cover-imagen p').html('<i class="fas fa-camera"></i> Más fotos</p>')
+    }else{
+        $('.busqueda').addClass('d-none')
+        $('.info-lugar').addClass('d-none')
+        $('.fotos').removeClass('d-none')
+        $('.cover-imagen p').html('<i class="fas fa-times"></i> Salir de la galeria</p>')
+    }
 }
