@@ -3,14 +3,20 @@
 function abrirLugar(abrir) {
     if (abrir) {
         $('.mostrar-mas').addClass('full')
+        $('.mostrar-mas i').removeClass('fa-chevron-up')
+        $('.mostrar-mas i').addClass('fa-chevron-down')
+        $('#otros-lugares > .row').html('')
         $('.mostrar-mas').attr("onclick", "abrirLugar(0)")
         setTimeout(()=>{
             otrosLugares()
-        },300)
+        },350)
         $('#otros-lugares').removeClass('d-none')
+        
     } else {
         $('.mostrar-mas').addClass('nofull')
         $('#otros-lugares').addClass('d-none')
+        $('.mostrar-mas i').removeClass('fa-chevron-down')
+        $('.mostrar-mas i').addClass('fa-chevron-up')
         setTimeout(() => {
             $('.mostrar-mas').removeClass('nofull')
             $('.mostrar-mas').removeClass('full')
@@ -75,7 +81,6 @@ function otrosLugares() {
         </div>
         </div>
         `
-        console.log(card)
         $('#otros-lugares > .row').append(card)
     }
 }

@@ -170,10 +170,6 @@ input.buscador{
     margin-top:25px;
 }
 
-.mostrar-mas.full h2 i{
-    display: none;
-}
-
 @keyframes hover-mostrar-mas{
     0%{
         height: 80px;
