@@ -27,23 +27,15 @@ function buscar(tipo) {
     clearTimeout(timer);
     timer = setTimeout(() => {
         let query = $('#buscador').val().toLowerCase()
-        for (let lugar of lugares[tipo]) {
-            if (lugar['nombre'].toLowerCase().includes(query) && query != "") {
-
-                busqueda.push(lugar)
-            }
-            else {
-                $("#busqueda").html('')
-
-            }
-        }
-        if (query != "") mostrarBusqueda(busqueda,tipo)
+        for (let lugar of lugares[tipo])
+            lugar['nombre'].toLowerCase().includes(query) && query != "" ? busqueda.push(lugar) : $("#busqueda").html('')
+        if (query != "") mostrarBusqueda(busqueda, tipo)
         else agitar(0)
     }, delay);
 }
 
 let busquedaAux = []
-function mostrarBusqueda(busqueda,tipo) {
+function mostrarBusqueda(busqueda, tipo) {
     if ((JSON.stringify(busquedaAux) != JSON.stringify(busqueda)) || ((JSON.stringify(busqueda) != "") && ($('.busqueda').html() == ""))) {
         $('.busqueda').html('')
         for (let lugar of busqueda) {
