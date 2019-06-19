@@ -1,3 +1,21 @@
+'use strict'
+
+/**
+ * Talabot -Chatbot- por Óscar Muñoz Cano
+ * No utiliza NLP (natural language processing) ni ningun tipo de "inteligencia artifical"
+ * Compara lo introducido con posibilidades de diferentes arrays in en funcion de su resultado dice una cosa el bot u otra
+ * 
+ * Ejemplo de frases introducidas por el usuario que el bot soportaria; (NOTA: no hace falta una correcta ortografia/gramatica de la oracion)
+ * 
+ * "Dime donde puedo dormir"
+ * "¿El qué puedo visitar?"
+ * "me aburro!!! que puedo hacer???"
+ * "donde puedo comer? tengo hambre"
+ * "hola, que tal!"
+ * "adios!!!!"
+ * "que puedes hacer??"
+ */
+
 let mute = false
 
 function cambiarBotonChatbot() {
@@ -17,6 +35,14 @@ function getMensaje() {
         var chat = document.getElementById("mensajes-chat");
         chat.scrollTop = chat.scrollHeight;
     }
+}
+
+function setMsg(msg) {
+    $('.chatbot-mensajes').append('<div class="d-flex justify-content-end mensaje"><div class="mensaje"><div class= "mensaje-burbuja enviadoPorTi">' + msg + '</div ></div></div>')
+    analizarMensaje(msg)
+    $("#chatbot-input").val('')
+    var chat = document.getElementById("mensajes-chat");
+    chat.scrollTop = chat.scrollHeight;
 }
 
 let frasesNoEncontrado = ['Lo siento, no te he entendido', 'Lo siento, no te he entendido prueba a preguntar otra cosa o lo mismo pero de forma diferente', 'Lo siento, no te he entendido,</br> puedes preguntarme que puedo hacer']
@@ -96,12 +122,12 @@ let frasesVisitar = [
 ]
 
 let frasesQuePuedoHacer = [
-    'Aqui tienes algunas sugerencias:<span class="badge badge-pill badge-primary badge-chatbotBoton" onclick="recComer()">Recomiendame un sitio para comer</span><span class="badge badge-pill badge-primary badge-chatbotBoton" onclick="recVisitar()">Que puedo visitar</span><span class="badge badge-pill badge-primary badge-chatbotBoton" onclick="recDormir()">Dime donde puedo dormir</span>'
+    `Aqui tienes algunas sugerencias:<span class="badge badge-pill badge-primary badge-chatbotBoton" onclick="setMsg('Recomiendame un sitio para comer')">Recomiendame un sitio para comer</span><span class="badge badge-pill badge-primary badge-chatbotBoton" onclick="setMsg('¿Qué puedo visitar?')">Que puedo visitar</span><span class="badge badge-pill badge-primary badge-chatbotBoton" onclick="setMsg('¿Dónde puedo dormir?')">Dime donde puedo dormir</span>`
 ]
 
 function silenciar() {
     mute = !mute
-    if(mute) $('#volumen').html("volume_off")
+    if (mute) $('#volumen').html("volume_off")
     else $('#volumen').html("volume_up")
 }
 
@@ -115,34 +141,34 @@ function desconectar() {
 function analizarMensaje(msg) {
     let encontrado = false
 
-    for(let mostrar in accionesMostrar){
-        for(let intens in intensifPregunta){
-            if((msg.includes(accionesMostrar[mostrar]) || msg.includes(intensifPregunta[intens])) && !encontrado){
-                for(let visitar in visitasOpt){
-                    if(msg.includes(visitasOpt[visitar]) && !encontrado){
+    for (let mostrar in accionesMostrar) {
+        for (let intens in intensifPregunta) {
+            if ((msg.includes(accionesMostrar[mostrar]) || msg.includes(intensifPregunta[intens])) && !encontrado) {
+                for (let visitar in visitasOpt) {
+                    if (msg.includes(visitasOpt[visitar]) && !encontrado) {
                         encontrado = true
                         decidirFrase(frasesVisitar)
                     }
                 }
-                for(let hotel in hotelesOpt){
-                    if(msg.includes(hotelesOpt[hotel]) && !encontrado){
+                for (let hotel in hotelesOpt) {
+                    if (msg.includes(hotelesOpt[hotel]) && !encontrado) {
                         encontrado = true
                         decidirFrase(frasesHotel)
                     }
                 }
-                for(let restaurante in restaurantesOpt){
-                    if(msg.includes(restaurantesOpt[restaurante]) && !encontrado){
+                for (let restaurante in restaurantesOpt) {
+                    if (msg.includes(restaurantesOpt[restaurante]) && !encontrado) {
                         encontrado = true
                         decidirFrase(frasesRestaurante)
                     }
                 }
-                for(let ocio in ocioOpt){
-                    if(msg.includes(ocioOpt[ocio]) && !encontrado){
+                for (let ocio in ocioOpt) {
+                    if (msg.includes(ocioOpt[ocio]) && !encontrado) {
                         encontrado = true
                         decidirFrase(frasesOcio)
                     }
                 }
-    
+
             }
         }
     }
@@ -199,22 +225,22 @@ function sendMensaje(msg) {
     }, 800);
 }
 
-function getHotel(){
+function getHotel() {
     let r = Math.floor(Math.random() * lugares['alojamientos'].length)
     return lugares['alojamientos'][r]['nombre']
 }
 
-function getRestaurante(){
+function getRestaurante() {
     let r = Math.floor(Math.random() * lugares['restaurantes'].length)
     return lugares['restaurantes'][r]['nombre']
 }
 
-function getOcio(){
+function getOcio() {
     let r = Math.floor(Math.random() * lugares['ocio'].length)
     return lugares['ocio'][r]['nombre']
 }
 
-function getVisitar(){
+function getVisitar() {
     let r = Math.floor(Math.random() * lugares['que-ver'].length)
     return lugares['que-ver'][r]['nombre']
 }
