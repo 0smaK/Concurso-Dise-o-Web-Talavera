@@ -33,8 +33,28 @@ let preguntasHabilidad = [
     'sabes', 'puedes', 'habilidad'
 ]
 
+let intensifPregunta = [
+    'puedo', 'donde'
+]
+
 let accionesMostrar = [
-    'mostrar', 'muestra', 'enseña', 'dime', 'cuales'
+    'mostrar', 'muestra', 'enseña', 'dime', 'cuales', 'recomienda', 'que puedo'
+]
+
+let restaurantesOpt = [
+    'cenar', 'comer', 'comida', 'hambre', 'gastronomia', 'merendar', 'merienda', 'desayun', 'ceno'
+]
+
+let hotelesOpt = [
+    'hotel', 'dormir', 'alojamiento', 'sueño', 'alojar'
+]
+
+let visitasOpt = [
+    'ver', 'lugares', 'turismo', 'visitar'
+]
+
+let ocioOpt = [
+    'ocio', 'aburro', 'hacer'
 ]
 
 let ComplDirectoHabilidad = [
@@ -53,6 +73,26 @@ let frasesDespedida = [
     'Adios, espero que vuelvas!',
     '¡Hasta luego!',
     '¡Hasta otra!'
+]
+
+let frasesHotel = [
+    `Te recomiendo alojarte en ${getHotel()}`,
+    `Si tienes sueño puedes preguntar por una habitación en ${getHotel()}`
+]
+
+let frasesRestaurante = [
+    `¿Tienes hambre? echa un vistazo a ${getRestaurante()}`,
+    `Si estás en Talavera y tienes hambre puedes pasarte por ${getRestaurante()}`
+]
+
+let frasesOcio = [
+    `¿Aburrido? echa un vistazo a ${getOcio()}`,
+    `¿Quieres pasarlo bien con tus amigos? mira esto: ${getOcio()}`
+]
+
+let frasesVisitar = [
+    `Puedes visitar ${getVisitar()}`,
+    `Visita ${getVisitar()}`
 ]
 
 let frasesQuePuedoHacer = [
@@ -74,6 +114,39 @@ function desconectar() {
 
 function analizarMensaje(msg) {
     let encontrado = false
+
+    for(let mostrar in accionesMostrar){
+        for(let intens in intensifPregunta){
+            if((msg.includes(accionesMostrar[mostrar]) || msg.includes(intensifPregunta[intens])) && !encontrado){
+                for(let visitar in visitasOpt){
+                    if(msg.includes(visitasOpt[visitar]) && !encontrado){
+                        encontrado = true
+                        decidirFrase(frasesVisitar)
+                    }
+                }
+                for(let hotel in hotelesOpt){
+                    if(msg.includes(hotelesOpt[hotel]) && !encontrado){
+                        encontrado = true
+                        decidirFrase(frasesHotel)
+                    }
+                }
+                for(let restaurante in restaurantesOpt){
+                    if(msg.includes(restaurantesOpt[restaurante]) && !encontrado){
+                        encontrado = true
+                        decidirFrase(frasesRestaurante)
+                    }
+                }
+                for(let ocio in ocioOpt){
+                    if(msg.includes(ocioOpt[ocio]) && !encontrado){
+                        encontrado = true
+                        decidirFrase(frasesOcio)
+                    }
+                }
+    
+            }
+        }
+    }
+
     for (let despedida in despedidas) {
         if (msg.includes(despedidas[despedida]) && !encontrado) {
             encontrado = true
@@ -105,8 +178,6 @@ function analizarMensaje(msg) {
 
 function decidirFrase(frases) {
     let num = Math.floor(Math.random() * (frases.length - 0) + 0)
-    console.log(num)
-    console.log(frases[num])
     sendMensaje(frases[num])
 }
 
@@ -126,4 +197,24 @@ function sendMensaje(msg) {
         chat.scrollTop = chat.scrollHeight
         $('#estado').html('En línea')
     }, 800);
+}
+
+function getHotel(){
+    let r = Math.floor(Math.random() * lugares['alojamientos'].length)
+    return lugares['alojamientos'][r]['nombre']
+}
+
+function getRestaurante(){
+    let r = Math.floor(Math.random() * lugares['restaurantes'].length)
+    return lugares['restaurantes'][r]['nombre']
+}
+
+function getOcio(){
+    let r = Math.floor(Math.random() * lugares['ocio'].length)
+    return lugares['ocio'][r]['nombre']
+}
+
+function getVisitar(){
+    let r = Math.floor(Math.random() * lugares['que-ver'].length)
+    return lugares['que-ver'][r]['nombre']
 }
