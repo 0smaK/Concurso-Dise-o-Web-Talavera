@@ -49,6 +49,7 @@ function meGusta(nombre, tipo, fuera) {
                 lugaresFAV.splice(lugaresFAV.findIndex(fav => fav.nombre === nombre), 1)
                 localStorage.removeItem("lugaresFAV")
                 setMeGusta(lugaresFAV)
+                mostrarMeGustas(tipo)
             }
         }
     }
@@ -106,7 +107,7 @@ function existenMeGustas(tipo){
     let favs = getMeGusta()
     let existe = false;
     if(favs == null || favs == undefined) favs = []
-    if(favs.filter(fav => {return fav.tipo === tipo})) existe = true
-    console.log(existe)
+    for(let fav of favs)
+        if(fav.tipo === tipo) existe = true
     return existe
 }

@@ -8,7 +8,7 @@ function getVistos() {
     return JSON.parse(localStorage.getItem("vistos"))
 }
 
-function borrarHistorial(){
+function borrarHistorial() {
     localStorage.removeItem("vistos")
     historialVacio()
 }
@@ -41,7 +41,7 @@ function verHistorial(tipo) {
     $('.vistos .no-vistos').addClass('d-none')
     $('.vistos .row').html('')
     let vistos = getVistos()
-    if (vistos == null || vistos == undefined || vistos == []){
+    if (vistos == null || vistos == undefined || vistos == []) {
         vistos = []
         historialVacio()
     }
@@ -62,12 +62,13 @@ function verHistorial(tipo) {
                         `
                     $('.vistos .row').append(cardHTML)
                 }
-}
-
-function historialVacio() {
-    let vistos = getVistos()
-    if (vistos == null || vistos == undefined || vistos == []) {
-        $('.vistos .no-vistos').removeClass('d-none')
-        $('.vistos .vistos-true').addClass('d-none')
+    let existe = false
+    for (let visto of vistos) {
+        if (visto.tipo === tipo) existe = true
+        if (!existe) historialVacio()
     }
+}
+function historialVacio() {
+    $('.vistos .no-vistos').removeClass('d-none')
+    $('.vistos .vistos-true').addClass('d-none')
 }
