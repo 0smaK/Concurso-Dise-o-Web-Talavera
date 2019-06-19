@@ -31,12 +31,12 @@
         </script>
 
     <!-- Scripts propios -->
+    <script src="./json/lugares.js"></script>
     <script src="./js/index.js"></script>
     <script src="./js/chatbot.js"></script>
     <script src="./js/menu-lateral.js"></script>
     <script src="./js/buscador.js"></script>
     <script src="./js/que-ver.js"></script>
-    <script src="./json/lugares.js"></script>
 
     <!-- link de estilos css propios -->
     <link rel="stylesheet" href="./css/estilos.css">
@@ -51,11 +51,10 @@
         <i id="cerrar-menu" class="material-icons"
             onclick="mostrarMenuLateral(); setTimeout(() => $('body').css('overflow','hidden'), 500)">close</i>
         <div class="submenu float-left">
-            <div class="submenu-item">Qué ver</div>
-            <div class="submenu-item">Alojamiento</div>
-            <div class="submenu-item">Restaurantes</div>
-            <div class="submenu-item">Bares y ocio</div>
-            <div class="submenu-item">Galeria</div>
+            <div class="submenu-item"><a href="./que-ver.html">Qué ver</a></div>
+            <div class="submenu-item"><a href="./alojamientos.html">Alojamiento</a></div>
+            <div class="submenu-item"><a href="./restaurantes.html">Restaurantes</a></div>
+            <div class="submenu-item"><a href="./ocio.html">Bares y ocio</a></div>
         </div>
         <div class="pronostico-tiempo float-right">
             <h1>El tiempo</h1>

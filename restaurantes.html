@@ -31,12 +31,12 @@
         </script>
 
     <!-- Scripts propios -->
+    <script src="./json/lugares.js"></script>
     <script src="./js/index.js"></script>
     <script src="./js/chatbot.js"></script>
     <script src="./js/menu-lateral.js"></script>
     <script src="./js/buscador.js"></script>
     <script src="./js/planes.js"></script>
-    <script src="./json/lugares.js"></script>
     <script src="./js/meGusta.js"></script>
     <script src="./js/vistos.js"></script>
 
@@ -58,11 +58,10 @@
     <div class="menu-lateral hide-menu">
         <i id="cerrar-menu" class="material-icons" onclick="mostrarMenuLateral()">close</i>
         <div class="submenu float-left">
-            <div class="submenu-item">Qué ver</div>
-            <div class="submenu-item">Alojamiento</div>
-            <div class="submenu-item">Restaurantes</div>
-            <div class="submenu-item">Bares y ocio</div>
-            <div class="submenu-item">Galeria</div>
+            <div class="submenu-item"><a href="./que-ver.html">Qué ver</a></div>
+            <div class="submenu-item"><a href="./alojamientos.html">Alojamiento</a></div>
+            <div class="submenu-item"><a href="./restaurantes.html">Restaurantes</a></div>
+            <div class="submenu-item"><a href="./ocio.html">Bares y ocio</a></div>
         </div>
         <div class="pronostico-tiempo float-right">
             <h1>El tiempo</h1>
@@ -88,7 +87,8 @@
     <!-- navbar en pc -->
     <nav class="navbar navbar-expand navbar-light bg-blanco d-flex justify-content-between sticky-top">
         <i class="material-icons menu-navbar" onclick="mostrarMenuLateral()">menu</i>
-        <a class="logo" href="./index.html"><img class="logo" src="./img/logo-talavera-turismo-full.png" alt="Logo Turismo Talavera de la Reina"></a>
+        <a class="logo" href="./index.html"><img class="logo" src="./img/logo-talavera-turismo-full.png"
+                alt="Logo Turismo Talavera de la Reina"></a>
         <div class="tiempo" style="font-size: 20px;">
             <span class="min" style="color:#007bff;"> ºC</span> /
             <span class="max" style="color:red"> ºC</span>

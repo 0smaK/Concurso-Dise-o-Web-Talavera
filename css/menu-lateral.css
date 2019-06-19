@@ -166,6 +166,15 @@ hr.separador{
     background-position: left bottom;
 }
 
+.submenu-item a{
+    color:white;
+    text-decoration: none;
+}
+
+.submenu-item:hover a{
+    color:black
+}
+
 @-webkit-keyframes blueTalaveraGradient {
     0%{background-position:0% 50%}
     50%{background-position:100% 50%}

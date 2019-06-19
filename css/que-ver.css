@@ -226,6 +226,11 @@ input.buscador{
     border: 0;
 }
 
+.mostrar-mas.full #otros-lugares{
+    height: calc(100vh - 64px);
+    overflow: auto;
+}
+
 .mostrar-mas.nofull{
     animation: cerrar-mostrar-mas .375s;
 }
@@ -301,3 +306,4 @@ div.fotos img{
     margin: 0;
     padding: 0;
 }
+

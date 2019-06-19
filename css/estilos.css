@@ -652,3 +652,8 @@ li.footer-el:hover{
         transform: translateY(0);
     }
 }
+
+/** Quitar borde azul en chrome (inputs, botones, etc...) */
+*:focus{
+    outline: none;
+}
