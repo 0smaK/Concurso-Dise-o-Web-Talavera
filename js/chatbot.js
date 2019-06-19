@@ -17,7 +17,9 @@
  */
 
 let mute = false
-
+/**
+ * Acceso al DOM para cambio de diseño
+ */
 function cambiarBotonChatbot() {
     if ($("#chatbot-input").val().length > 0) {
         $(".enviar-msg").css("color", "#007bff")
@@ -25,7 +27,9 @@ function cambiarBotonChatbot() {
         $(".enviar-msg").css("color", "gray")
     }
 }
-
+/**
+ * Recibe un mensaje al introducir intro en el chatbot
+ */
 function getMensaje() {
     let msg = $("#chatbot-input").val()
     if (msg !== "") {
@@ -37,6 +41,10 @@ function getMensaje() {
     }
 }
 
+/**
+ * igual que getMensaje pero enviando el msg por argumentos
+ * @param {string} msg 
+ */
 function setMsg(msg) {
     $('.chatbot-mensajes').append('<div class="d-flex justify-content-end mensaje"><div class="mensaje"><div class= "mensaje-burbuja enviadoPorTi">' + msg + '</div ></div></div>')
     analizarMensaje(msg)
@@ -124,20 +132,25 @@ let frasesVisitar = [
 let frasesQuePuedoHacer = [
     `Aqui tienes algunas sugerencias:<span class="badge badge-pill badge-primary badge-chatbotBoton" onclick="setMsg('Recomiendame un sitio para comer')">Recomiendame un sitio para comer</span><span class="badge badge-pill badge-primary badge-chatbotBoton" onclick="setMsg('¿Qué puedo visitar?')">Que puedo visitar</span><span class="badge badge-pill badge-primary badge-chatbotBoton" onclick="setMsg('¿Dónde puedo dormir?')">Dime donde puedo dormir</span>`
 ]
-
+/**
+ * Silencia el chatbot
+ */
 function silenciar() {
     mute = !mute
     if (mute) $('#volumen').html("volume_off")
     else $('#volumen').html("volume_up")
 }
-
+/**
+ * Vacia el historial de chats
+ */
 function vaciarChat() {
     $('.chatbot-mensajes').empty()
 }
 
-function desconectar() {
-}
-
+/**
+ * Analiza el mensaje para mostrar una cosa u otra
+ * @param {string} msg 
+ */
 function analizarMensaje(msg) {
     let encontrado = false
 
@@ -201,12 +214,19 @@ function analizarMensaje(msg) {
 
     if (!encontrado) decidirFrase(frasesNoEncontrado)
 }
-
+/**
+ * Elige frase aleatoria dentro de un conjunto de frases
+ * @param {string} frases 
+ */
 function decidirFrase(frases) {
     let num = Math.floor(Math.random() * (frases.length - 0) + 0)
     sendMensaje(frases[num])
 }
 
+/**
+ * Envia el mensaje
+ * @param {string} msg 
+ */
 function sendMensaje(msg) {
     $('.online').css('background-color', 'lime');
     $('#estado').html('escribiendo...')
@@ -224,7 +244,9 @@ function sendMensaje(msg) {
         $('#estado').html('En línea')
     }, 800);
 }
-
+/**
+ * Getters para obtener lugares, puede ser refactorizado pasando el tipo de lugar por argumento y tener una funcion en vez de 4
+ */
 function getHotel() {
     let r = Math.floor(Math.random() * lugares['alojamientos'].length)
     return lugares['alojamientos'][r]['nombre']

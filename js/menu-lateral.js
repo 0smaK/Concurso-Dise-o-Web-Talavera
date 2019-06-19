@@ -4,6 +4,9 @@ let menuOculto = true;
 
 cargarJSONTiempo(0)
 
+/**
+ * Abre el menu lateral
+ */
 function mostrarMenuLateral() {
     if (menuOculto) {
         $('.menu-lateral').removeClass('hide-menu')
@@ -26,6 +29,10 @@ function mostrarMenuLateral() {
     }
 }
 
+/**
+ * Carga el json con el tiempo de aemet
+ * @param {*} dia 
+ */
 function cargarJSONTiempo(dia) {
     let url = 'https://opendata.aemet.es/opendata/api/prediccion/especifica/municipio/diaria/45165/?api_key=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJvc2Nhcm1jOTlAZ21haWwuY29tIiwianRpIjoiYjMwYjJlNDItZGZiYi00Y2M1LWFlNDMtMTQ3Y2Y1ZWZhOTVmIiwiaXNzIjoiQUVNRVQiLCJpYXQiOjE1NTkwNjc0MzQsInVzZXJJZCI6ImIzMGIyZTQyLWRmYmItNGNjNS1hZTQzLTE0N2NmNWVmYTk1ZiIsInJvbGUiOiIifQ._0ccALKpYYsiIGTqCibZY7fnLk5wV1D3hSL_8bMuRFg'
     $.getJSON(url)
@@ -34,7 +41,11 @@ function cargarJSONTiempo(dia) {
         })
 }
 
-
+/**
+ * Retorna los datos de cargarJsonTiempo
+ * @param {*} url 
+ * @param {*} dia 
+ */
 function returnDatos(url, dia) {
     $.getJSON(url)
         .done((data) => {
@@ -42,6 +53,11 @@ function returnDatos(url, dia) {
         })
 }
 
+/**
+ * Muestra la temperatura en Talavera de la Reina (en el menu)
+ * @param {*} data 
+ * @param {*} numDia 
+ */
 function mostrarTemperatura(data, numDia) {
     let i = 0;
     let estadoCieloArray = data[numDia]['estadoCielo']
@@ -51,6 +67,13 @@ function mostrarTemperatura(data, numDia) {
     modificarTiempoDOM(descripcion, tempMin, tempMax, numDia)
 }
 
+/**
+ * Funcion que accede al DOM para cambiar iconos y textos
+ * @param {*} estadoCielo 
+ * @param {*} min 
+ * @param {*} max 
+ * @param {*} dia 
+ */
 function modificarTiempoDOM(estadoCielo, min, max, dia) {
     $('.estadoCielo').html(estadoCielo)
     $('.temperaturas').html(min + "ºC&nbsp;&nbsp;&nbsp;" + max + "ºC")

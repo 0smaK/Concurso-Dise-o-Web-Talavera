@@ -2,6 +2,9 @@
 
 let oculto = true;
 
+/**
+ * Funcion que muestra el chatbot en pantalla
+ */
 function mostrarChatbot() {
     if (oculto) {
         $('#chatbot').removeClass('hide-chatbot')
@@ -19,7 +22,9 @@ function mostrarChatbot() {
     }
 }
 
-
+/**
+ * Oculta el chatbot
+ */
 function ocultarChatbot() {
     $('#chatbot').addClass('hide-chatbot')
     $('span.chatbot').removeClass('hide-chatbot')

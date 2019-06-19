@@ -10,14 +10,25 @@ $(document).ready(() => {
     }
 })
 
+/**
+ * Recibe los me gusta del local storage
+ */
 function getMeGusta() {
     return JSON.parse(localStorage.getItem("lugaresFAV")) == null ? [] : JSON.parse(localStorage.getItem("lugaresFAV"))  
 }
 
+/**
+ * Establece en localstorage tus me gusta
+ * @param {object} lugaresFAV 
+ */
 function setMeGusta(lugaresFAV) {
     localStorage.setItem("lugaresFAV", JSON.stringify(lugaresFAV))
 }
 
+/**
+ * nombre existe en megusta?
+ * @param {string} nombre 
+ */
 function existeEnMeGusta(nombre) {
     let favs = getMeGusta()
     let existe = false
@@ -29,6 +40,12 @@ function existeEnMeGusta(nombre) {
     return existe
 }
 
+/**
+ * Da like a un lugar
+ * @param {string} nombre 
+ * @param {string} tipo 
+ * @param {boolean} fuera 
+ */
 function meGusta(nombre, tipo, fuera) {
     if (fuera) salirPlanExc()
     let lugaresFav = []
@@ -55,6 +72,10 @@ function meGusta(nombre, tipo, fuera) {
     }
 }
 
+/**
+ * Mostrar todos los me gusta
+ * @param {string} tipo 
+ */
 function mostrarMeGustas(tipo) {
     $('.favs .con-likes').removeClass('d-none')
     $('.favs .no-likes').addClass('d-none')
@@ -86,11 +107,18 @@ function mostrarMeGustas(tipo) {
     }
 }
 
+/**
+ * Si no tienes me gusta..... mostrar un texto
+ */
 function mostrarNoTienesMeGusta() {
     $('.favs .con-likes').addClass('d-none')
     $('.favs .no-likes').removeClass('d-none')
 }
 
+/**
+ * Cambia el color del boton de me gusta
+ * @param {string} nombre 
+ */
 function cambiarCorazon(nombre) {
     if (existeEnMeGusta(nombre)) $(`span#${nombre.replace(/[\W_]/g, "-")}.me-gusta-round > i`).addClass('far').removeClass('fa')
     else $(`span#${nombre.replace(/[\W_]/g, "-")}.me-gusta-round > i`).removeClass('far').addClass('fa')
@@ -103,6 +131,10 @@ function cambiarCorazones() {
     }
 }
 
+/**
+ * Funcion que retorna un boolean true si existe un me gusta para ese tipo
+ * @param {*} tipo 
+ */
 function existenMeGustas(tipo){
     let favs = getMeGusta()
     let existe = false;

@@ -1,18 +1,33 @@
 'use strict'
 
+/**
+ * Establece vistos en el localstorage
+ */
 function setVistos(vistos) {
     localStorage.setItem("vistos", JSON.stringify(vistos))
 }
 
+/**
+ * Retorna lugares vistos del localStorage
+ */
 function getVistos() {
     return JSON.parse(localStorage.getItem("vistos"))
 }
 
+
+/**
+ * Borrar historial de vistos
+ */
 function borrarHistorial() {
     localStorage.removeItem("vistos")
     historialVacio()
 }
 
+/**
+ * Añade lugar al historial
+ * @param {string} nombre 
+ * @param {string} tipo 
+ */
 function addHistorial(nombre, tipo) {
     let vistos = getVistos()
     if (vistos == null || vistos == undefined) vistos = []
@@ -28,6 +43,10 @@ function addHistorial(nombre, tipo) {
         }
 }
 
+/**
+ * retorna si has visto ese lugar
+ * @param {string} nombre 
+ */
 function visto(nombre) {
     let vistoBool = false
     let vistos = getVistos()
@@ -36,6 +55,10 @@ function visto(nombre) {
     return vistoBool
 }
 
+/**
+ * Ver historial de vistos
+ * @param {string} tipo 
+ */
 function verHistorial(tipo) {
     $('.vistos .vistos-true').removeClass('d-none')
     $('.vistos .no-vistos').addClass('d-none')
@@ -68,6 +91,10 @@ function verHistorial(tipo) {
         if (!existe) historialVacio()
     }
 }
+
+/**
+ * Muestra historial vacio
+ */
 function historialVacio() {
     $('.vistos .no-vistos').removeClass('d-none')
     $('.vistos .vistos-true').addClass('d-none')

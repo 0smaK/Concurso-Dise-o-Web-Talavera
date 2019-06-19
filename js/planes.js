@@ -1,6 +1,10 @@
 'use strict'
 
-
+/**
+ * Filtros (me gusta, visitados, todos)
+ * @param {string} filtro 
+ * @param {string} tipo 
+ */
 function setFiltro(filtro, tipo) {
     switch (filtro) {
         case 'todos':
@@ -31,6 +35,10 @@ function setFiltro(filtro, tipo) {
     }
 }
 
+/**
+ * Muestra los lugares existentes en un objeto
+ * @param {string} tipo 
+ */
 function mostrarLugares(tipo) {
     $('.todos .row').html('')
     for (let lugar of lugares[tipo]) {
@@ -58,6 +66,10 @@ function mostrarLugares(tipo) {
     }
 }
 
+/**
+ * Retorna los servicios de un lugar
+ * @param {object} lugar 
+ */
 function obtenerServicios(lugar) {
     let servicios = ""
     if (lugar["servicios"] != undefined)
@@ -75,6 +87,10 @@ function obtenerServicios(lugar) {
     return servicios
 }
 
+/**
+ * Obtiene los links de un lugar
+ * @param {*} lugar 
+ */
 function obtenerLinks(lugar) {
     let links = ""
     if (lugar['web'] != "" && lugar['web'] != undefined) links += `<a target="_blank" href="${lugar['web']}"><span class="links-plan"><i class="fas fa-link"></i> Visitar web</span></a>`
@@ -83,10 +99,18 @@ function obtenerLinks(lugar) {
     return links
 }
 
+/**
+ * Al clickar una imagen, esa es la que se muestra en grande
+ * @param {string} img 
+ */
 function seleccionarImg(img) {
     $('.img-principal').attr('src', img)
 }
 
+/**
+ * Obtiene imagenes del array de imagenes de un lugar
+ * @param {object} lugar 
+ */
 function obtenerImagenes(lugar) {
     let imagenes = ""
     for (let imagen of lugar['imagenes']) {
@@ -96,7 +120,11 @@ function obtenerImagenes(lugar) {
     }
     return imagenes
 }
-
+/**
+ * muestra la info de un lugar
+ * @param {object} lugar 
+ * @param {string} tipo 
+ */
 function mostrarInfo(lugar, tipo) {
     let servicios = obtenerServicios(lugar)
     let links = obtenerLinks(lugar)
@@ -148,6 +176,11 @@ function mostrarInfo(lugar, tipo) {
     }, 250)
 }
 
+/**
+ * Muestra un lugar en pantalla completa
+ * @param {string} tipo 
+ * @param {string} nombre 
+ */
 function abrirPlan(tipo, nombre) {
     let height = $(window).height() - 64;
     height += "px"
@@ -168,7 +201,9 @@ function abrirPlan(tipo, nombre) {
     mostrarInfo(lugarSel, tipo)
     addHistorial(nombre, tipo)
 }
-
+/**
+ * Sale del lugar
+ */
 function salirPlan() {
     $('.btn-salir-plan').addClass('desplazar-i')
     $('#mostrar-plan').addClass('salir-plan')

@@ -5,6 +5,10 @@ setTimeout(() => {
     mostrarBotonLimpiar()
 }, 100)
 
+
+/**
+ * Si el buscador tiene texto, mostrar boton de borrar
+ */
 function mostrarBotonLimpiar() {
     if ($("#buscador").val().length > 0) {
         $(".limpiar").removeClass("d-none")
@@ -14,6 +18,9 @@ function mostrarBotonLimpiar() {
     }
 }
 
+/**
+ * Limpia la busqueda del buscador
+ */
 function limpiarBusqueda() {
     $("#buscador").val('')
     agitar(0)
@@ -21,7 +28,10 @@ function limpiarBusqueda() {
 }
 
 let timer, delay = 200;
-
+/**
+ * hace una busqueda comparando el texto del buscador con el json
+ * @param {string} tipo tipo de lugar (alojamiento, restaurante, ocio, etc..)
+ */
 function buscar(tipo) {
     let busqueda = []
     clearTimeout(timer);
@@ -35,6 +45,11 @@ function buscar(tipo) {
 }
 
 let busquedaAux = []
+/**
+ * Imprime la busqueda
+ * @param {string of json object} busqueda  
+ * @param {string} tipo 
+ */
 function mostrarBusqueda(busqueda, tipo) {
     if ((JSON.stringify(busquedaAux) != JSON.stringify(busqueda)) || ((JSON.stringify(busqueda) != "") && ($('.busqueda').html() == ""))) {
         $('.busqueda').html('')
@@ -46,6 +61,10 @@ function mostrarBusqueda(busqueda, tipo) {
     busquedaAux = busqueda
 }
 
+/**
+ * En caso de error (texto introducido no corresponde) agita el buscador y añade un color rojo 
+ * @param {boolean} flag 
+ */
 function agitar(flag) {
     if (flag) {
         $('input.buscador').addClass('agitar')
@@ -62,6 +81,10 @@ function agitar(flag) {
     }
 }
 
+/**
+ * Al mostrar lo buscado para hacer scroll se hace mediante la posicion horizontal del cursor sobre el div de busqueda
+ * @param {boolean} derecha 
+ */
 function scrollBusqueda(derecha) {
     if (derecha) {
         $('.busqueda').animate({
