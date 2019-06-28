@@ -124,6 +124,10 @@ input.buscador{
 
     .busqueda{
         top:90px;
+        overflow-x: auto;
+    }
+    .busqueda::-webkit-scrollbar{
+        display: none;
     }
 }
 

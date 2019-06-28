@@ -78,7 +78,6 @@ const lugares = {
         "servicios": ['WiFi Gratis'],
         "imagenes": [
             "./img/alojamientos/la-playa.jpg",
-            "./img/alojamientos/la-playa-2.jpg",
             "./img/alojamientos/la-playa-3.jpg",
             "./img/alojamientos/la-playa-4.jpg"
         ]

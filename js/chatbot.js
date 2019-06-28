@@ -152,6 +152,7 @@ function vaciarChat() {
  * @param {string} msg 
  */
 function analizarMensaje(msg) {
+    msg = msg.toLowerCase()
     let encontrado = false
 
     for (let mostrar in accionesMostrar) {

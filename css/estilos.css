@@ -597,6 +597,7 @@ li.footer-el{
     list-style-type: none;
     padding-top:5px;
     transition: color .0625s ease-in-out;
+    transform: translateX(-20px)
 }
 
 li.footer-el:hover{
